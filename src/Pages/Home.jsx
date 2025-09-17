@@ -30,7 +30,7 @@ return ()=> window.removeEventListener("scroll",handleScroll);
     },[])
 
   return (
-    <div className="w-full">
+    <div className="w-screen">
       {/* ✅ Fixed Background */}
       <div
         className="hidden md:block fixed top-0 left-0 w-screen h-screen bg-cover bg-center"
@@ -118,12 +118,12 @@ return ()=> window.removeEventListener("scroll",handleScroll);
       Perfect for weddings, perfect for memories.
     </p>
     <div className="mt-5 md:flex md:space-x-4">
-    <button className="w-96 h-10 bg-orange-500 text-white rounded-md md:w-36 md:h-16 border-transparent">
-       Contact Us
-    </button>
-    <button className="w-96 h-10 bg-transparent border-2 border-black text-black mt-5 md:mt-0 rounded-md md:w-36 md:h-16">
-        View Menu
-    </button>
+   <button className="w-full h-10 bg-orange-500 text-white rounded-md md:w-36 md:h-16 border-transparent">
+   Contact Us
+</button>
+<button className="w-full h-10 bg-transparent border-2 border-black text-black mt-5 md:mt-0 rounded-md md:w-36 md:h-16">
+   View Menu
+</button>
     </div>
     
   </div>
@@ -139,7 +139,7 @@ return ()=> window.removeEventListener("scroll",handleScroll);
         {/* <div className="h-[150vh]"></div> */}
         <div className="flex justify-center flex-col items-center space-y">
           <div className="w-36 h-8 bg-amber-100 flex items-center justify-center">
-            <p class="font-roboto font-semibold text-[12.25px] leading-[17.5px] tracking-normal text-center align-middle text-orange-700">
+            <p className="font-roboto font-semibold text-[12.25px] leading-[17.5px] tracking-normal text-center align-middle text-orange-700">
               Limited Time Offer
           </p>
           
