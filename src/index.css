@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root {
-  margin: 0;
-}
+    html, body {
+      min-height: 100%;
+      height: 100%; /* Important for some browsers */
+      margin: 0;
+      padding: 0;
+    }
