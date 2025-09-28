@@ -16,7 +16,7 @@ import Footer from "../../../common/layout/footer/Footer";
 function MenuLayout() {
   const products = [
     {
-      image: product8,
+      image: productImabe,
       name: "Artisan Croissants",
       price: "400",
       description:
@@ -25,7 +25,7 @@ function MenuLayout() {
       ingredients: "Flour, Butter, Eggs...",
     },
     {
-      image: product10,
+      image: product8,
       name: "Artisan Croissants",
       price: "400",
       description:
@@ -33,6 +33,17 @@ function MenuLayout() {
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
+     {
+      image: product5,
+      name: "Artisan Croissants",
+      price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      catogery: "Pastries",
+      ingredients: "Flour, Butter, Eggs...",
+    },
+
+    
     {
       image: product1,
       name: "Artisan Croissants",
@@ -52,7 +63,7 @@ function MenuLayout() {
       ingredients: "Flour, Butter, Eggs...",
     },
     {
-      image: productImabe,
+      image: product10,
       name: "Artisan Croissants",
       price: "400",
       description:
@@ -60,6 +71,7 @@ function MenuLayout() {
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
+   
     {
       image: product3,
       name: "Artisan Croissants",
@@ -78,15 +90,8 @@ function MenuLayout() {
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
-    {
-      image: product5,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
+     
+   
   ];
   return (
     <div>

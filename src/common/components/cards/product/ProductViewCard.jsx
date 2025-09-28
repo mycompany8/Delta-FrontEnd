@@ -12,10 +12,10 @@ function ProductViewCard({
 }) {
   return (
     <>
-      <div className=" w-[166.5px] h-full  min-h-[380px] sm:w-[405.328125px] flex flex-col sm:h-[633.328125px] leading-relaxed shadow-md rounded-lg ">
+      <div className=" w-[166.5px] h-full  min-h-[380px] sm:w-[405.328125px] flex flex-col sm:h-[633.328125px] leading-relaxed shadow-xl rounded-lg ">
         <div className="h-2/3 ">
           <img
-            className="h-full object-cover w-full rounded-t-lg"
+            className="h-full object-center w-full rounded-t-lg"
             src={image}
             alt=""
           />
