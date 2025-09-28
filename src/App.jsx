@@ -1,21 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import Home from './Pages/Home'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+
+import Routeree from "./Router";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
-    <Home/>
+      <Routeree />
     </>
-
-   
-      
-      
-    
-  )
+  );
 }
 
-export default App
+export default App;
