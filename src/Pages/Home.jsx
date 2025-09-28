@@ -1,34 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import HomeFooter from "../Components/HomeFooter";
 
 export default function Home() {
-
-  const[isScrolled , setIsScrolled] = useState(false)
-    const targetRef = useRef(null);
-    const handleScroll =()=>{
-      var middle =  window.innerHeight/2
-      if(window.scrollY>=middle){
-        setIsScrolled(true)
-      }
-      else{
-        setIsScrolled(false)
-      }
-
-    }
-    useEffect(()=>{
-       const handleScroll =()=>{
-      var middle =  window.innerHeight/2
-      if(window.scrollY>=middle){
-        setIsScrolled(true)
-      }
-      else{
-        setIsScrolled(false)
-      }
-
-    }
-        window.addEventListener("scroll", handleScroll);
-return ()=> window.removeEventListener("scroll",handleScroll);
-    },[])
-
   return (
     <div className="w-full">
       {/* ✅ Fixed Background */}
@@ -39,36 +12,6 @@ return ()=> window.removeEventListener("scroll",handleScroll);
             "linear-gradient(to right, rgba(255,255,255,0.9), transparent), url('/Images/home-first.jpg')",
         }}
       ></div>
-
-      {/* ✅ Mobile Background */}
-      {/* <img
-        src="/Images/home-first.jpg"
-        alt="Bakery"
-        className="block md:hidden fixed top-0 left-0 w-full h-full object-cover"
-      /> */}
-
-      {/* ✅ Gradient Overlay */}
-   <div
-  className={`fixed top-0 left-0 w-full z-20 hidden md:flex justify-end items-center px-10 py-4 transition-colors duration-500 ${
-    isScrolled ? "bg-black/80 shadow-lg" : "bg-transparent"
-  }`}
->
-  <ul className="flex space-x-5">
-    <li className="text-white font-roboto font-medium text-base leading-6">About</li>
-    <li className="text-white font-roboto font-medium text-base leading-6">Menu</li>
-    <li className="text-white font-roboto font-medium text-base leading-6">Gallery</li>
-    <li className="text-white font-roboto font-medium text-base leading-6">Contact</li>
-  </ul>
-  <ul className="flex space-x-2">
-    <li><img src="/Images/facebook.png" alt="Facebook" /></li>
-    <li><img src="/Images/Instagram.png" alt="Instagram" /></li>
-  </ul>
-</div>
-
-      {/* ✅ Mobile Hamburger
-      <div className="fixed top-4 right-4 md:hidden z-20">
-        <img src="/Images/Hamburger.png" className="w-10 h-10" alt="menu" />
-      </div> */}
 
 {/* ✅ Hero Section */}
 <section className="relative z-10 flex flex-col h-screen">
@@ -81,20 +24,6 @@ return ()=> window.removeEventListener("scroll",handleScroll);
 
   {/* Gradient Overlay */}
   <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"></div>
-
-  {/* Logo fixed on top-left */}
-  <div className="absolute top-6 left-6 z-20">
-    <img
-      src="/Images/DeltaImage.png"
-      className="w-24 h-14 md:w-28 md:h-20 lg:w-40 lg:h-24"
-      alt="Delta Logo"
-    />
-  </div>
-
-  {/* ✅ Mobile Hamburger */}
-  <div className="absolute top-6 right-4 md:hidden z-20">
-    <img src="/Images/Hamburger.png" className="w-10 h-10" alt="menu" />
-  </div>
 
   {/* Text centered on mobile, left aligned on bigger screens */}
   {/* Text left aligned on all screens */}
@@ -139,7 +68,7 @@ return ()=> window.removeEventListener("scroll",handleScroll);
         {/* <div className="h-[150vh]"></div> */}
         <div className="flex justify-center flex-col items-center space-y">
           <div className="w-36 h-8 bg-amber-100 flex items-center justify-center">
-            <p class="font-roboto font-semibold text-[12.25px] leading-[17.5px] tracking-normal text-center align-middle text-orange-700">
+            <p className="font-roboto font-semibold text-[12.25px] leading-[17.5px] tracking-normal text-center align-middle text-orange-700">
               Limited Time Offer
           </p>
           
@@ -148,6 +77,9 @@ return ()=> window.removeEventListener("scroll",handleScroll);
           <h3 className="font-bold text-orange-500">Special Collection</h3>
         </div>
       </section>
+
+      {/* Home-specific Footer */}
+      <HomeFooter />
     </div>
   );
 }
