@@ -15,36 +15,37 @@ import product6 from "../../../../public/Images/product6.png";
 import Footer from "../../../common/layout/footer/Footer";
 function MenuLayout() {
   const products = [
-     {
+    {
       image: product8,
       name: "Artisan Croissants",
-             price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
-     {
+    {
       image: product10,
       name: "Artisan Croissants",
-             price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
-     {
+    {
       image: product1,
       name: "Artisan Croissants",
-             price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
-    }, {
+    },
+    {
       image: product2,
       name: "Artisan Croissants",
-             price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
@@ -53,7 +54,7 @@ function MenuLayout() {
     {
       image: productImabe,
       name: "Artisan Croissants",
-             price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
@@ -62,7 +63,7 @@ function MenuLayout() {
     {
       image: product3,
       name: "Artisan Croissants",
-            price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
@@ -71,7 +72,7 @@ function MenuLayout() {
     {
       image: product4,
       name: "Artisan Croissants",
-      price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
@@ -80,7 +81,7 @@ function MenuLayout() {
     {
       image: product5,
       name: "Artisan Croissants",
-            price:'400',
+      price: "400",
       description:
         "Buttery, flaky perfection baked fresh daily with premium French butter",
       catogery: "Pastries",
@@ -92,19 +93,19 @@ function MenuLayout() {
       <Header />
 
       <MenuHeader />
-     <div className="grid grid-cols-2 sm:grid-cols-3 w-[100vw] place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
-       {products.map((item, i) => (
-        <ProductViewCard
-          image={item?.image}
-          name={item?.name}
-          description={item?.description}
-          catogery={item?.catogery}
-          ingredients={item?.ingredients}
-          price={item?.price}
-        />
-      ))}
-     </div>
-     <Footer/>
+      <div className="grid grid-cols-2 sm:grid-cols-3 w-[100vw] place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
+        {products.map((item, i) => (
+          <ProductViewCard
+            image={item?.image}
+            name={item?.name}
+            description={item?.description}
+            catogery={item?.catogery}
+            ingredients={item?.ingredients}
+            price={item?.price}
+          />
+        ))}
+      </div>
+      <Footer />
     </div>
   );
 }
