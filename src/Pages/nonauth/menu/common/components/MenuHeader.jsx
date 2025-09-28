@@ -16,7 +16,7 @@ function MenuHeader() {
   ];
   return (
     <>
-      <div className="  bg-tertiaryDark h-[300px]  w-[100vw] ">
+      <div className="  bg-tertiary h-[280px]  w-[100vw] ">
         <img
           src={logo}
           className="w-[220px] hidden sm:block absolute top-7  h-[150px]"
@@ -24,7 +24,7 @@ function MenuHeader() {
         />
         <div className="h-full w-full text-center flex flex-col px-3 sm:p-0 justify-center items-center">
           <h1 className=" text-4xl sm:text-6xl font-extrabold">Our Complete Menu</h1>
-          <p className="font-normal text-base p-2">
+          <p className="font-normal text-xl text-neutral-secondary p-2">
             Discover our full range of artisanal pastries, breads, and desserts,
             all baked <br />
             fresh daily with premium ingredients

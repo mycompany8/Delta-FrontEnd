@@ -28,7 +28,7 @@ function Header() {
   }, []);
 
   return (
-    <div className="w-[100vw] flex items-center py-3 sm:py-0 bg-neutral-secondary ">
+    <div className="w-[100vw] sticky top-0 flex items-center py-3 sm:py-0 bg-neutral-secondary ">
       {" "}
       <div
         className={` w-full bg-green-700    md:flex justify-end items-center px-10 py-4 transition-colors duration-500 ${
