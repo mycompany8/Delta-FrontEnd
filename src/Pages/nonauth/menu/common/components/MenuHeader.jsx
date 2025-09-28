@@ -19,7 +19,7 @@ function MenuHeader() {
       <div className="  bg-tertiaryDark h-[300px]  w-[100vw] ">
         <img
           src={logo}
-          className="w-[300px] hidden sm:block absolute top-7  h-[200px]"
+          className="w-[220px] hidden sm:block absolute top-7  h-[150px]"
           alt=""
         />
         <div className="h-full w-full text-center flex flex-col px-3 sm:p-0 justify-center items-center">
