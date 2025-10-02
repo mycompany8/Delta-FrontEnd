@@ -4,6 +4,7 @@ import instagram from "../../../../public/Images/Instagram.png";
 import menu from "../../../../public/Images/menu.png";
 
 function Header() {
+  
   const [isScrolled, setIsScrolled] = useState(false);
   const targetRef = useRef(null);
   const handleScroll = () => {
@@ -50,15 +51,14 @@ function Header() {
               Contact
             </li>
             <ul className="flex space-x-2">
-            <li>
-              <img src={facebook} alt="Facebook" />
-            </li>
-            <li>
-              <img src={instagram} alt="Instagram" />
-            </li>
+              <li>
+                <img src={facebook} alt="Facebook" />
+              </li>
+              <li>
+                <img src={instagram} alt="Instagram" />
+              </li>
+            </ul>
           </ul>
-          </ul>
-          
         </div>
       </div>
       <div className="block sm:hidden pr-6">
