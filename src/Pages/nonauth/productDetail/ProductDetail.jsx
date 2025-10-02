@@ -4,9 +4,96 @@ import ProductDetailsView from "./common/components/productDetailView/ProductDet
 import ProductDescription from "./common/components/productDescription/ProductDescription";
 import CustomerReview from "./common/cards/review/CustomerReview";
 import Footer from "../../../common/layout/footer/Footer";
+import ProductViewCard from "../../../common/components/cards/product/ProductViewCard";
 // import CustomerReview from "./common/components/review/CustomerReview";
-
+import productImabe from "../../../../public/Images/product.png";
+import product1 from "../../../../public/Images/product1.png";
+import product8 from "../../../../public/Images/product8.png";
+import product10 from "../../../../public/Images/product10.png";
+import product2 from "../../../../public/Images/product2.png";
+import product3 from "../../../../public/Images/product3.png";
+import product4 from "../../../../public/Images/product4.png";
+import product5 from "../../../../public/Images/product5.png";
 function ProductDetail() {
+     const products = [
+        {
+          image: productImabe,
+          name: "Artisan Croissants",
+        //   price: "400",
+          description:
+            "Buttery, flaky perfection baked fresh daily with premium French butter",
+        //   catogery: "Pastries",
+        //   ingredients: "Flour, Butter, Eggs...",
+        },
+        {
+          image: product8,
+          name: "Artisan Croissants",
+        //   price: "400",
+          description:
+            "Buttery, flaky perfection baked fresh daily with premium French butter",
+        //   catogery: "Pastries",
+        //   ingredients: "Flour, Butter, Eggs...",
+        },
+         {
+          image: product5,
+          name: "Artisan Croissants",
+        //   price: "400",
+          description:
+            "Buttery, flaky perfection baked fresh daily with premium French butter",
+        //   catogery: "Pastries",
+        //   ingredients: "Flour, Butter, Eggs...",
+        },
+    
+        
+        // {
+        //   image: product1,
+        //   name: "Artisan Croissants",
+        //   price: "400",
+        //   description:
+        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+        //   catogery: "Pastries",
+        //   ingredients: "Flour, Butter, Eggs...",
+        // },
+        {
+          image: product2,
+          name: "Artisan Croissants",
+        //   price: "400",
+          description:
+            "Buttery, flaky perfection baked fresh daily with premium French butter",
+        //   catogery: "Pastries",
+        //   ingredients: "Flour, Butter, Eggs...",
+        },
+        // {
+        //   image: product10,
+        //   name: "Artisan Croissants",
+        // //   price: "400",
+        //   description:
+        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+        // //   catogery: "Pastries",
+        // //   ingredients: "Flour, Butter, Eggs...",
+        // },
+       
+        // {
+        //   image: product3,
+        //   name: "Artisan Croissants",
+        //   price: "400",
+        //   description:
+        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+        // //   catogery: "Pastries",
+        // //   ingredients: "Flour, Butter, Eggs...",
+        // },
+        // {
+        //   image: product4,
+        //   name: "Artisan Croissants",
+        //   price: "400",
+        //   description:
+        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+        //   catogery: "Pastries",
+        //   ingredients: "Flour, Butter, Eggs...",
+        // },
+         
+       
+      ];
   return (
     <>
       <div className="h-screen ">
@@ -36,6 +123,19 @@ function ProductDetail() {
             },
           ]}
         />
+       <div className="grid grid-cols-4 py-5 gap-x-4 px-12 place-items-center w-[100vw]">
+         {products.map((item, i) => (
+          <ProductViewCard 
+            image={item?.image}
+            name={item?.name}
+            description={item?.description}
+            catogery={item?.catogery}
+            ingredients={item?.ingredients}
+            price={item?.price}
+          />
+        ))}
+       </div>
+
         <Footer/>
       </div>
     </>

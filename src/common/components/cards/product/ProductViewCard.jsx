@@ -9,10 +9,11 @@ function ProductViewCard({
   ingredients,
   catogery,
   price,
+  className
 }) {
   return (
     <>
-      <div className=" w-[166.5px] h-full  min-h-[380px] sm:w-[405.328125px] flex flex-col sm:h-[633.328125px] leading-relaxed shadow-xl rounded-lg ">
+      <div className={` ${className} flex flex-col leading-relaxed shadow-xl rounded-lg `}>
         <div className="h-2/3 ">
           <img
             className="h-full object-center w-full rounded-t-lg"
@@ -29,9 +30,13 @@ function ProductViewCard({
           <span className="p-1 text-sm rounded-md bg-tertiary text-primary">
             {catogery}
           </span>
-          <h1 className="text-sm font-normal text-neutral-gray1">
+          {
+            ingredients &&
+              <h1 className="text-sm font-normal text-neutral-gray1">
             Ingredients:
           </h1>
+          }
+        
           <p className="text-neutral-gray1 text-sm font-normal">
             {ingredients}
           </p>
