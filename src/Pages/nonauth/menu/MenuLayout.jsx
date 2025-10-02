@@ -107,6 +107,7 @@ function MenuLayout() {
             catogery={item?.catogery}
             ingredients={item?.ingredients}
             price={item?.price}
+            className={'w-[166.5px] h-full  sm:h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] '}
           />
         ))}
       </div>
