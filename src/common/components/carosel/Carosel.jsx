@@ -41,7 +41,7 @@ const Carousel = ({
         </button>
       </div>
 
-      <div className=" max-w-full   bg-red-900 h-[568px]  w-full   max-h-[560px] relative">
+      <div className=" max-w-full    h-[568px]  w-full   max-h-[560px] relative">
         <AnimatePresence mode="wait">
           <motion.img
             key={current}

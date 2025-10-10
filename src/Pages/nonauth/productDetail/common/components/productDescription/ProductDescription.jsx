@@ -43,6 +43,7 @@ function ProductDescription() {
               "Freeze for longer storage",
               "Reheat before serving",
             ]}
+            name="product"
           />
         </div>
 
