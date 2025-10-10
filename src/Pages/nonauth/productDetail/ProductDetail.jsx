@@ -123,7 +123,13 @@ function ProductDetail() {
             },
           ]}
         />
-       <div className="grid grid-cols-4 py-5 gap-x-4 px-12 place-items-center w-[100vw]">
+       <div className="w-[100vw]">
+        <div className="flex flex-col justify-center space-y-3 p-4 items-center">
+            <h1 className="text-2xl font-semibold">You Might Also Like</h1>
+            <p>Discover more delicious treats from our bakery</p>
+        </div>
+        <div className="grid grid-cols-4 py-5 gap-x-4 px-12 place-items-center ">
+        
          {products.map((item, i) => (
           <ProductViewCard 
             image={item?.image}
@@ -134,6 +140,7 @@ function ProductDetail() {
             price={item?.price}
           />
         ))}
+       </div>
        </div>
 
         <Footer/>
