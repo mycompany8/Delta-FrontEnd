@@ -4,13 +4,13 @@ import ProductAboutDetails from "../../../../../../common/components/cards/produ
 
 function ProductDescription() {
   return (
-    <div className=" w-[100vw] h-full space-y-7 p-12 ">
-      <div className="w-full flex py-5 border-b border-neutral-gray1 ">
+    <div className=" w-[100vw] h-full space-y-7 sm:p-12 p-5   ">
+      <div className="w-full h-full flex py-5 border-b border-neutral-gray1 ">
         <h1>icon</h1>
         <h1>Description</h1>
       </div>
-      <div className="w-full h-full mt-9 flex ">
-        <div className="w-2/3 ">
+      <div className="w-full h-full mt-9 flex flex-col gap-y-6 sm:flex-row ">
+        <div className="sm:w-2/3 h-full ">
           <ProductAboutDetails
             aboutTitle="About Our Cinnamon Rolls"
             aboutParagraphs={[
@@ -47,9 +47,9 @@ function ProductDescription() {
           />
         </div>
 
-        <div className=" p-10 w-1/3">
+        <div className=" sm:p-10 h-full sm:w-1/3">
           <div className=" space-y-3">
-            <div className="bg-tertiary p-6 space-y-4 ">
+            <div className="bg-tertiary  h-full p-6 space-y-4 ">
               <div className="flex gap-x-3">
                 <h1>icon</h1>
                 <h1>Enquire Now</h1>

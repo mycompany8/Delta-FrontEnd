@@ -98,23 +98,28 @@ function FestivelDetailLayout() {
     <>
       <div className="h-full sm:h-[95vh] w-[100vw] ">
         <DetailPageHeader />
-        <div className="flex h-full justify-around ">
-          <div className="w-full h-full flex justify-center py-10 pl-5 ">
-            <div className="flex flex-col space-y-5">
-              <div>
-                <div className="w-[616px]  h-[462px] ">
+        <div className="flex flex-col sm:flex-row h-full justify-around ">
+          <div className="w-full  h-full flex justify-center py-10 sm:pl-5 ">
+            <div className="flex flex-col overflow-auto  space-y-5">
+              <div className="">
+                <div className="sm:w-[616px] flex items-center justify-center sm:flex-none  w-full  h-[462px] ">
                   <img
                     src={deepavali}
-                    className="w-full rounded-xl h-full object-cover"
+                    className=" w-[360px] sm:w-full rounded-xl h-full object-cover"
                     alt=""
                   />
                 </div>
               </div>
-              <div className="flex justify-between w-full ">
-                <div className="div bg-amber-400 h-[145px] w-[145px] "></div>
-                <div className="div bg-amber-400 h-[145px] w-[145px] "></div>
-                <div className="div bg-amber-400 h-[145px] w-[145px] "></div>
-                <div className="div bg-amber-400 h-[145px] w-[145px] "></div>
+              <div className="flex  justify-center items-center overflow-x-auto  sm:min-w-[620px] ">
+                <div className="flex h-full   gap-x-3  overflow-x-auto w-[620px] ">
+                <div className="div bg-amber-400 h-[145px] w-[145px] flex-shrink-0 "></div>
+                <div className="div bg-amber-400 h-[145px] w-[145px] flex-shrink-0 "></div>
+                <div className="div bg-amber-400 h-[145px] w-[145px] flex-shrink-0 "></div>
+                {/* <div className="div bg-amber-400 h-[145px] w-[145px] flex-shrink-0 "></div>
+                <div className="div bg-amber-400 h-[145px] w-[145px] flex-shrink-0 "></div>
+                <div className="div bg-amber-400 h-[145px] w-[145px]  flex-shrink-0"></div>
+                <div className="div bg-amber-400 h-[145px] w-[145px] flex-shrink-0 "></div> */}
+              </div>
               </div>
             </div>
           </div>
@@ -168,7 +173,7 @@ function FestivelDetailLayout() {
             />
           </div>
         </div>
-        <div className=" flex justify-center w-full h-[60vh] items-center">
+        <div className=" flex justify-center h-full w-full sm:h-[60vh] items-center">
           <div className="w-[800px] shadow-md rounded-md p-5  space-y-6">
             <div className="w-full space-y-4  border-b border-neutral-gray1 ">
               <div className=" flex w-[200px] border-b border-primary px-3 bg-tertiary py-4 gap-x-5 ">
@@ -222,11 +227,11 @@ function FestivelDetailLayout() {
           </div>
         </div>
         <div className="w-[100vw] mt-20">
-          <div className="flex flex-col justify-center space-y-3 p-4 items-center">
-            <h1 className="text-2xl font-semibold">You Might Also Like</h1>
-            <p>Discover more delicious treats from our bakery</p>
+          <div className="flex flex-col sm:justify-center space-y-3 p-4 sm:items-center">
+            <h1 className="text-2xl font-bold">You Might Also Like</h1>
+            {/* <p>Discover more delicious treats from our bakery</p> */}
           </div>
-          <div className="grid grid-cols-4 py-5 gap-x-4 px-12 place-items-center ">
+          <div className="grid grid-cols-2 gap-y-3 sm:grid-cols-4 py-5 gap-x-4 px-3 sm:px-12 place-items-center ">
             {products.map((item, i) => (
               <ProductViewCard
                 image={item?.image}
@@ -237,6 +242,7 @@ function FestivelDetailLayout() {
                 price={item?.price}
                 festivel={true}
                 btnname="View Details"
+                className={''}
               />
             ))}
           </div>

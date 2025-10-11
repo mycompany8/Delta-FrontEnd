@@ -15,92 +15,51 @@ import product3 from "../../../../public/Images/product3.png";
 import product4 from "../../../../public/Images/product4.png";
 import product5 from "../../../../public/Images/product5.png";
 function ProductDetail() {
-     const products = [
-        {
-          image: productImabe,
-          name: "Artisan Croissants",
-        //   price: "400",
-          description:
-            "Buttery, flaky perfection baked fresh daily with premium French butter",
-        //   catogery: "Pastries",
-        //   ingredients: "Flour, Butter, Eggs...",
-        },
-        {
-          image: product8,
-          name: "Artisan Croissants",
-        //   price: "400",
-          description:
-            "Buttery, flaky perfection baked fresh daily with premium French butter",
-        //   catogery: "Pastries",
-        //   ingredients: "Flour, Butter, Eggs...",
-        },
-         {
-          image: product5,
-          name: "Artisan Croissants",
-        //   price: "400",
-          description:
-            "Buttery, flaky perfection baked fresh daily with premium French butter",
-        //   catogery: "Pastries",
-        //   ingredients: "Flour, Butter, Eggs...",
-        },
-    
-        
-        // {
-        //   image: product1,
-        //   name: "Artisan Croissants",
-        //   price: "400",
-        //   description:
-        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-        //   catogery: "Pastries",
-        //   ingredients: "Flour, Butter, Eggs...",
-        // },
-        {
-          image: product2,
-          name: "Artisan Croissants",
-        //   price: "400",
-          description:
-            "Buttery, flaky perfection baked fresh daily with premium French butter",
-        //   catogery: "Pastries",
-        //   ingredients: "Flour, Butter, Eggs...",
-        },
-        // {
-        //   image: product10,
-        //   name: "Artisan Croissants",
-        // //   price: "400",
-        //   description:
-        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-        // //   catogery: "Pastries",
-        // //   ingredients: "Flour, Butter, Eggs...",
-        // },
-       
-        // {
-        //   image: product3,
-        //   name: "Artisan Croissants",
-        //   price: "400",
-        //   description:
-        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-        // //   catogery: "Pastries",
-        // //   ingredients: "Flour, Butter, Eggs...",
-        // },
-        // {
-        //   image: product4,
-        //   name: "Artisan Croissants",
-        //   price: "400",
-        //   description:
-        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-        //   catogery: "Pastries",
-        //   ingredients: "Flour, Butter, Eggs...",
-        // },
-         
-       
-      ];
+  const products = [
+    {
+      image: productImabe,
+      name: "Artisan Croissants",
+      //   price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      //   catogery: "Pastries",
+      //   ingredients: "Flour, Butter, Eggs...",
+    },
+    {
+      image: product8,
+      name: "Artisan Croissants",
+      //   price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      //   catogery: "Pastries",
+      //   ingredients: "Flour, Butter, Eggs...",
+    },
+    {
+      image: product5,
+      name: "Artisan Croissants",
+      //   price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      //   catogery: "Pastries",
+      //   ingredients: "Flour, Butter, Eggs...",
+    },
+    {
+      image: product2,
+      name: "Artisan Croissants",
+      //   price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      //   catogery: "Pastries",
+      //   ingredients: "Flour, Butter, Eggs...",
+    },
+  ];
   return (
     <>
-      <div className="h-screen ">
+      <div className="h-full sm:h-screen ">
         <DetailPageHeader />
         <ProductDetailsView />
       </div>
-      <div className="">
+      <div className="h-full">
         <ProductDescription />
         <CustomerReview
           title="Customer Reviews"
@@ -123,27 +82,27 @@ function ProductDetail() {
             },
           ]}
         />
-       <div className="w-[100vw]">
-        <div className="flex flex-col justify-center space-y-3 p-4 items-center">
+        <div className="w-[100vw] h-full">
+          <div className="flex flex-col justify-center space-y-3 p-4 items-center">
             <h1 className="text-2xl font-semibold">You Might Also Like</h1>
             <p>Discover more delicious treats from our bakery</p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 py-5 gap-x-4 px-2 gap-y-3 sm:px-12 place-items-center ">
+            {products.map((item, i) => (
+              <ProductViewCard
+                image={item?.image}
+                name={item?.name}
+                description={item?.description}
+                catogery={item?.catogery}
+                ingredients={item?.ingredients}
+                price={item?.price}
+                btnname={"View Detail"}
+              />
+            ))}
+          </div>
         </div>
-        <div className="grid grid-cols-4 py-5 gap-x-4 px-12 place-items-center ">
-        
-         {products.map((item, i) => (
-          <ProductViewCard 
-            image={item?.image}
-            name={item?.name}
-            description={item?.description}
-            catogery={item?.catogery}
-            ingredients={item?.ingredients}
-            price={item?.price}
-          />
-        ))}
-       </div>
-       </div>
 
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
