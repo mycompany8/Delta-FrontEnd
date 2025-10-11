@@ -49,7 +49,6 @@ function ProductViewCard({
               </div>
             </div>
           )}
-
           <p>{description}</p>
           <span className="p-1 text-sm rounded-md bg-tertiary text-primary">
             {catogery}

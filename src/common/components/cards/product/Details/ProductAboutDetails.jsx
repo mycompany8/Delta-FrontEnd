@@ -12,12 +12,12 @@ function ProductAboutDetails({
 }) {
   return (
   <div>
-      <div className="space-y-6 leading-relaxed">
+      <div className="space-y-6 h-full leading-relaxed">
       {/* About Section */}
-      <div className="space-y-3 leading-relaxed">
-        <h1 className="text-3xl font-semibold">{aboutTitle}</h1>
+      <div className="space-y-3 w-full h  leading-relaxed">
+        <h1 className=" text-2xl sm:text-3xl font-semibold">{aboutTitle}</h1>
         {aboutParagraphs.map((text, idx) => (
-          <p key={idx} className="text-lg font-light">
+          <p key={idx} className=" tetx-base sm:text-lg   font-light">
             {text}
           </p>
         ))}
@@ -28,13 +28,13 @@ function ProductAboutDetails({
           {/* ingredient*/}
           <div className="space-y-3">
             <h1 className="text-lg font-semibold">Ingredients</h1>
-            <div className="flex gap-x-4 text-base">
+            <div className="flex gap-x-4 space-y-6 sm:text-base text-sm ">
               {ingredients.map((column, colIdx) => (
                 <div key={colIdx}>
                   {column.map((item, idx) => (
-                    <div key={idx} className="flex gap-x-2">
+                    <div key={idx} className="flex space-y-3 gap-x-2">
                       <h1>icon</h1>
-                      <h1 className="text-lg">{item}</h1>
+                      <h1 className=" text-sm sm:text-lg">{item}</h1>
                     </div>
                   ))}
                 </div>
@@ -48,9 +48,9 @@ function ProductAboutDetails({
               <div className="space-y-3">
                 <div className="flex gap-x-2">
                   <h1>icon</h1>
-                  <h1>{allergenTitle}</h1>
+                  <h1 className="">{allergenTitle}</h1>
                 </div>
-                <p>{allergenInfo}</p>
+                <p >{allergenInfo}</p>
               </div>
             </div>
           </div>

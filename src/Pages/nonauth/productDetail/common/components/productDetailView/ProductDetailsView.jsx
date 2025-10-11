@@ -14,11 +14,11 @@ function ProductDetailsView() {
   return (
     <div>
       {" "}
-      <div className="flex j gap-x-1 w-[100vw] p-5">
-        <div className=" w-full flex-1 p-12 justify-end items-center">
+      <div className="flex flex-col sm:flex-row gap-x-1 w-[100vw]  p-5">
+        <div className=" w-full flex-1 sm:p-12 justify-end items-center">
           <Carousel items={images} autoSlide={true} autoSlideInterval={2500} />
         </div>
-        <div className=" py-12 px-5  gap-y-9 leading-relaxed  flex-1 w-full">
+        <div className=" py-12 px-5   gap-y-9 leading-relaxed  flex-1 w-full">
           <ProductDetailDescription
             title="Cinnamon Rolls"
             description="Warm, gooey, and absolutely irresistible

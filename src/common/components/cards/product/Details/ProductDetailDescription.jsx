@@ -18,27 +18,27 @@ function ProductDetailDescription({
   return (
     <div className="flex flex-col gap-y-7">
       {/* Title + Description */}
-      <div>
+      <div className="">
         <h1 className="text-3xl font-semibold">{title}</h1>
-        <p className="mt-4 text-neutral-gray1 text-xl w-[600px] font-normal">
+        <p className="mt-4 text-neutral-gray1 text-xl w-[370px] sm:w-[600px] font-normal">
           {description}
         </p>
       </div>
 
       <div className={`space-y-5 `}>
-        <div className=" ">
+        <div className=" overflow-auto  w-full">
           {name == "festivel" ? (
-            <div className="flex gap-x-3">
+            <div className="flex gap-x-3 ">
               {catogeries.map((item, i) => (
                 <div
-                  className={`${item?.color} items-center flex gap-x-3 text-sm rounded-xl py-1 px-4`}
+                  className={`${item?.color} items-center  flex h-10  sm:h-7 gap-x-1 sm:gap-x-3 text-sm rounded-xl py-1  px-4`}
                 >
                   <img
                     className="w-3 h-3 object-cover"
                     src={item.icon}
                     alt=""
                   />
-                  <h1>{item.description}</h1>
+                  <h1 className="text-xs sm:text-sm">{item.description}</h1>
                 </div>
               ))}
             </div>
