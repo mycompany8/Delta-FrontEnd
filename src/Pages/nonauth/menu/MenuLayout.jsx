@@ -98,7 +98,7 @@ function MenuLayout() {
       <Header />
 
       <MenuHeader />
-      <div className="grid grid-cols-2 sm:grid-cols-3 w-[100vw] place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 w-full sm:w-[100vw]  place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
         {products.map((item, i) => (
           <ProductViewCard
             image={item?.image}

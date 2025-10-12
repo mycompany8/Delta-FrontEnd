@@ -4,7 +4,7 @@ import ProductAboutDetails from "../../../../../../common/components/cards/produ
 
 function ProductDescription() {
   return (
-    <div className=" w-[100vw] h-full space-y-7 sm:p-12 p-5   ">
+    <div className=" w-[100vw]  h-full space-y-7 sm:p-12 p-5   ">
       <div className="w-full h-full flex py-5 border-b border-neutral-gray1 ">
         <h1>icon</h1>
         <h1>Description</h1>

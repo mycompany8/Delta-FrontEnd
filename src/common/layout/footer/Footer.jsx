@@ -6,7 +6,7 @@ function Footer() {
   return (
     <>
       <div className="bg-neutral-secondary w-[100vw] sm:h-[345px] h-full flex flex-col min-h-[345px]  ">
-        <div className=" flex flex-wrap sm:flex-nowrap p-2 sm:p-10 h-full text-neutral-gray2 justify-around">
+        <div className=" flex flex-wrap sm:flex-nowrap p-2 sm:p-10 sm:px-20 h-full text-neutral-gray2 justify-around">
           <div className="div">
             <h1 className="text-2xl font-bold text-white">Delta Bakery</h1>
             <p className="text-base font-normal">

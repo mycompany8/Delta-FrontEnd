@@ -2,11 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import facebook from "../../../../public/Images/facebook.png";
 import instagram from "../../../../public/Images/Instagram.png";
 import menu from "../../../../public/Images/menu.png";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
-  
   const [isScrolled, setIsScrolled] = useState(false);
   const targetRef = useRef(null);
+  const navigate = useNavigate();
   const handleScroll = () => {
     var middle = window.innerHeight / 2;
     if (window.scrollY >= middle) {
@@ -28,6 +29,25 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const data = [
+    {
+      name: "About",
+      url: "/about",
+    },
+    {
+      name: "Menu",
+      url: "/menu",
+    },
+    {
+      name: "Gallery",
+      url: "/menu",
+    },
+    {
+      name: "Contact",
+      url: "/contact",
+    },
+  ];
+
   return (
     <div className="w-[100vw] sticky top-0 flex items-center py-3 sm:py-0 bg-neutral-secondary ">
       {" "}
@@ -38,18 +58,15 @@ function Header() {
       >
         <div className="hidden sm:block">
           <ul className="flex space-x-5  ">
-            <li className="text-white  font-roboto font-medium text-base leading-6">
-              About
-            </li>
-            <li className="text-white font-roboto font-medium text-base leading-6">
-              Menu
-            </li>
-            <li className="text-white font-roboto font-medium text-base leading-6">
-              Gallery
-            </li>
-            <li className="text-white font-roboto font-medium text-base leading-6">
-              Contact
-            </li>
+            {data.map((item, i) => (
+              <li
+                onClick={() => navigate(item.url)}
+                className="text-white  font-roboto font-medium text-base leading-6"
+              >
+                {item.name}
+              </li>
+            ))}
+
             <ul className="flex space-x-2">
               <li>
                 <img src={facebook} alt="Facebook" />
