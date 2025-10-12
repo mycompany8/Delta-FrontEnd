@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Menu() {
   const [selectedCategory, setSelectedCategory] = useState("All");
@@ -48,7 +49,7 @@ export default function Menu() {
         <div className="w-full">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-8 w-full">
             {/* Category Filters */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -108,6 +109,12 @@ export default function Menu() {
                     <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">
                         {product.category}
                     </span>
+                    <Link
+                        to={`/product/${product.id}`}
+                        className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-semibold transition-colors"
+                    >
+                        See More
+                    </Link>
                     </div>
                     <p className="text-gray-500 text-xs leading-relaxed line-clamp-2 mt-auto">
                     <span className="font-semibold">Ingredients:</span> {product.ingredients}

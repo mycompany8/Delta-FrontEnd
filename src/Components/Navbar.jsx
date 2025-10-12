@@ -2,20 +2,44 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
+  const [isOverHero, setIsOverHero] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const handleMouseEnter = () => {
+    setIsOverHero(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsOverHero(false);
+  };
+
   const handleScroll = () => {
-    var middle = window.innerHeight / 2;
-    if (window.scrollY >= middle) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
+    // Check if scrolled past hero section
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+      const heroRect = heroSection.getBoundingClientRect();
+      setIsScrolled(window.scrollY > heroRect.height);
     }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Add event listeners to the hero section
+    const heroSection = document.querySelector('.hero-section');
+    if (heroSection) {
+      heroSection.addEventListener('mouseenter', handleMouseEnter);
+      heroSection.addEventListener('mouseleave', handleMouseLeave);
+    }
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      if (heroSection) {
+        heroSection.removeEventListener('mouseenter', handleMouseEnter);
+        heroSection.removeEventListener('mouseleave', handleMouseLeave);
+      }
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
@@ -23,7 +47,7 @@ export default function Navbar() {
       {/* Desktop Navigation */}
       <div
         className={`fixed top-0 left-0 w-full z-20 hidden md:flex justify-end items-center px-10 py-4 transition-colors duration-500 ${
-          isScrolled ? "bg-black/80 shadow-lg" : "bg-transparent"
+          isOverHero && !isScrolled ? "bg-transparent" : "bg-gray-900 shadow-lg"
         }`}
       >
         <ul className="flex space-x-5">

@@ -1,4 +1,5 @@
 import React from "react";
+import { IoLogoFacebook, IoLogoInstagram } from "react-icons/io";
 
 export default function CommonFooter() {
   return (
@@ -29,10 +30,10 @@ export default function CommonFooter() {
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
             <div className="flex space-x-3">
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                <img src="/Images/facebook.png" alt="Facebook" className="w-6 h-6" />
+                <IoLogoFacebook />
               </a>
               <a href="#" className="text-gray-300 hover:text-white transition-colors">
-                <img src="/Images/Instagram.png" alt="Instagram" className="w-6 h-6" />
+                <IoLogoInstagram />
               </a>
             </div>
           </div>
