@@ -6,7 +6,6 @@ import ProductDetail from "./Pages/nonauth/productDetail/ProductDetail";
 import FestivelDetailLayout from "./Pages/nonauth/festivelDetail/FestivelDetailLayout";
 import ContactLayOut from "./Pages/nonauth/contact/ContactLayOut";
 import AboutLayOut from "./Pages/nonauth/about/AboutLayOut";
-import ErrorPage from "./common/layout/error/ErrorPage";
 import ServerError from "./Pages/nonauth/errors/serverError/ServerError";
 import PageNotFound from "./Pages/nonauth/errors/pagenotfound/PageNotFound";
 
