@@ -1,7 +1,7 @@
 import React from "react";
 
 function Button({ className, name, image }) {
-  const basicStyle = "p-2 px-3 rounded-md ";
+  const basicStyle = "p-2 px-3 rounded-sm ";
   return (
     <>
       <button className={`${basicStyle} ${className}`}>

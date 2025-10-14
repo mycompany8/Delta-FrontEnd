@@ -6,6 +6,9 @@ import ProductDetail from "./Pages/nonauth/productDetail/ProductDetail";
 import FestivelDetailLayout from "./Pages/nonauth/festivelDetail/FestivelDetailLayout";
 import ContactLayOut from "./Pages/nonauth/contact/ContactLayOut";
 import AboutLayOut from "./Pages/nonauth/about/AboutLayOut";
+import ErrorPage from "./common/layout/error/ErrorPage";
+import ServerError from "./Pages/nonauth/errors/serverError/ServerError";
+import PageNotFound from "./Pages/nonauth/errors/pagenotfound/PageNotFound";
 
 function Routeree() {
   return (
@@ -17,6 +20,8 @@ function Routeree() {
         <Route path="/festivel-detail" element={<FestivelDetailLayout />}></Route>
         <Route path="/contact" element={<ContactLayOut />}></Route>
         <Route path="/about" element={<AboutLayOut />}></Route>
+        <Route path="/notfound" element={<PageNotFound />}></Route>
+        <Route path="/servererror" element={<ServerError />}></Route>
       </Routes>
     </div>
   );

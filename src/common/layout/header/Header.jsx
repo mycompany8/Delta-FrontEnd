@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import facebook from "../../../../public/Images/facebook.png";
 import instagram from "../../../../public/Images/Instagram.png";
 import menu from "../../../../public/Images/menu.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,10 +49,10 @@ function Header() {
   ];
 
   return (
-    <div className="w-[100vw] sticky top-0 flex items-center py-3 sm:py-0 bg-neutral-secondary ">
+    <div className="w-[100vw] sticky top-0 flex items-center py-3 sm:py-0  bg-black/80">
       {" "}
       <div
-        className={` w-full bg-green-700    md:flex justify-end items-center px-10 py-4 transition-colors duration-500 ${
+        className={` w-full bg-black/80   md:flex justify-end items-center px-10 py-4 transition-colors duration-500 ${
           isScrolled ? "bg-black/80 shadow-lg" : "bg-transparent"
         }`}
       >
@@ -73,7 +73,9 @@ function Header() {
               </li>
               <li>
                 <img src={instagram} alt="Instagram" />
+                
               </li>
+              
             </ul>
           </ul>
         </div>
