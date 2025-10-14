@@ -17,9 +17,10 @@ function ProductViewCard({
   return (
     <>
       <div
-        className={` ${className} flex flex-col leading-relaxed shadow-xl rounded-lg  `}
+        className={` ${className}   flex flex-col leading-relaxed shadow-xl rounded-lg  h-full`}
       >
-        <div className="h-2/3 ">
+        
+        <div className=" h-2/3  ">
           <img
             className="h-full object-center w-full rounded-t-lg"
             src={image}
@@ -42,7 +43,7 @@ function ProductViewCard({
                 </h1>
                 {festivel && (
                   <Button
-                    className={"bg-primary text-sm text-white"}
+                    className={"bg-primary text-sm  text-white"}
                     name={btnname}
                   />
                 )}
@@ -62,9 +63,9 @@ function ProductViewCard({
           <p className="text-neutral-gray1 text-sm font-normal">
             {ingredients}
           </p>
-          {!festivel && (
+          {/* {!festivel && (
             <Button className={"bg-primary text-white"} name={btnname} />
-          )}
+          )} */}
         </div>
       </div>
     </>

@@ -168,11 +168,13 @@ import HomeFooter from "./common/components/HomeFooter";
 import SignatureTreats from "./common/components/SignatureTreats";
 import GallerySection from "./common/components/GallerySection";
 import Footer from "../../../common/layout/footer/Footer";
+import { Link } from "react-router-dom";
 
 
 export default function Home() {
   return (
     <div className=" w-[100vw] ">
+     
       <div className="relative z-20">
         <Header />
       </div>

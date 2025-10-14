@@ -33,7 +33,7 @@ function MenuLayout() {
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
-     {
+    {
       image: product5,
       name: "Artisan Croissants",
       price: "400",
@@ -43,7 +43,6 @@ function MenuLayout() {
       ingredients: "Flour, Butter, Eggs...",
     },
 
-    
     {
       image: product1,
       name: "Artisan Croissants",
@@ -71,7 +70,7 @@ function MenuLayout() {
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
-   
+
     {
       image: product3,
       name: "Artisan Croissants",
@@ -90,8 +89,6 @@ function MenuLayout() {
       catogery: "Pastries",
       ingredients: "Flour, Butter, Eggs...",
     },
-     
-   
   ];
   return (
     <div>
@@ -107,7 +104,10 @@ function MenuLayout() {
             catogery={item?.catogery}
             ingredients={item?.ingredients}
             price={item?.price}
-            className={'w-[166.5px] h-full  sm:h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] '}
+            className={
+              "w-[166.5px] h-full  sm:h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
+            }
+            btnname={"View Details"}
           />
         ))}
       </div>
