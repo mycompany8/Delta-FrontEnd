@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../../components/button/Button";
-import SupportCard from "./card/SupportCard";
+import SupportCard from "../../../Pages/nonauth/errors/common/card/SupportCard";
 
 function ErrorLayOut({
   bgImage,
