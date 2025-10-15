@@ -18,7 +18,7 @@ function ErrorLayOut({
         style={{ backgroundImage: `url(${bgImage})` }}
         className="w-screen h-screen bg-center bg-cover relative flex items-center justify-center"
       >
-        <div className="absolute inset-0 bg-black/35"></div>
+        <div className="absolute inset-0 bg-white/85"></div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center space-y-4 px-4 sm:px-8">
           <img className="w-10 h-10 rounded-full " src={img} alt="" />
           <h1 className="text-5xl sm:text-9xl font-extrabold text-primary drop-shadow-lg">

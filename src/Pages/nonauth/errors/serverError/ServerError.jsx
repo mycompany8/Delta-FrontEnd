@@ -4,9 +4,9 @@ import ErrorLayOut from "../../../../common/layout/error/ErrorLayOut";
 
 import Footer from "../../../../common/layout/footer/Footer";
 import bgimage from "../../../../../public/Images/product4.png";
-import cookie from "../../../../../public/Images/cookie.png";
-import saved from "../../../../../public/Images/saved.png";
-import like from "../../../../../public/Images/like.png";
+import data from "../../../../../public/Images/data.png";
+import repair from "../../../../../public/Images/repair.png";
+import serverissue from "../../../../../public/Images/serverissue.png";
 import gmail from "../../../../../public/Images/gmailorange.png";
 import sadcookie from "../../../../../public/Images/sadcookie.jpg";
 
@@ -18,9 +18,9 @@ function ServerError() {
   ];
 
   const icons = [
-    { src: like, label: "Like" },
-    { src: cookie, label: "Cookie" },
-    { src: saved, label: "Saved" },
+    { src: serverissue, label: "Server Issue" },
+    { src: repair, label: "Under Repair" },
+    { src: data, label: "Data Safe" },
   ];
 
   const support = {

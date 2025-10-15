@@ -104,9 +104,10 @@ function MenuLayout() {
             ingredients={item?.ingredients}
             price={item?.price}
             className={
-              "w-[166.5px] h-full  sm:h-[633.328125px]  min-h-[380px] sm:w-[485.328125px] "
+              "w-[166.5px] h-full  sm:min-h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
             }
             btnname={"View Details"}
+            menu={true}
           />
         ))}
       </div>

@@ -12,13 +12,13 @@ function ProductViewCard({
   className,
   festivel,
   btnname,
+  menu
 }) {
   return (
     <>
       <div
-        className={` ${className}   flex flex-col leading-relaxed shadow-xl rounded-2xl  h-full`}
+        className={` ${className}   flex flex-col leading-relaxed shadow-xl rounded-xl  h-full`}
       >
-        
         <div className=" h-2/3  ">
           <img
             className="h-full object-center w-full rounded-t-2xl"
@@ -26,7 +26,7 @@ function ProductViewCard({
             alt=""
           />
         </div>
-        <div className=" h-full   leading-relaxed p-2 sm:p-5">
+        <div className=" h-full space-y-2   leading-relaxed p-2 sm:p-5">
           {!festivel ? (
             <div className="flex justify-between  ">
               <h1 className="text-xl text-primary font-bold w-1/4">{name}</h1>
@@ -36,20 +36,20 @@ function ProductViewCard({
             <div className="space-y-4">
               <h1 className="text-xl text-primary font-bold w-1/4">{name}</h1>
 
-              <div className="flex justify-between ">
+              <div className="flex justify-between items-center ">
                 <h1 className="text-base text-primary font-semibold">
                   {price}
                 </h1>
                 {festivel && (
                   <Button
-                    className={"bg-primary text-sm  text-white"}
+                    className={"bg-primary text-sm   text-white"}
                     name={btnname}
                   />
                 )}
               </div>
             </div>
           )}
-          <p>{description}</p>
+          <p className="text-sm font-medium">{description}</p>
           <span className="p-1 text-sm rounded-md bg-tertiary text-primary">
             {catogery}
           </span>
@@ -62,9 +62,9 @@ function ProductViewCard({
           <p className="text-neutral-gray1 text-sm font-normal">
             {ingredients}
           </p>
-          {/* {!festivel && (
-            <Button className={"bg-primary text-white"} name={btnname} />
-          )} */}
+          {!festivel && !menu && (
+            <Button className={"bg-primary w-full  text-white"} name={btnname} />
+          )}
         </div>
       </div>
     </>
