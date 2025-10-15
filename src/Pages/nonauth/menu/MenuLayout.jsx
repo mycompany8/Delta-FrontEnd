@@ -95,7 +95,7 @@ function MenuLayout() {
       <Header />
 
       <MenuHeader />
-      <div className="grid grid-cols-2 sm:grid-cols-3 w-full sm:w-[100vw]  place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 w-[100vw]  place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
         {products.map((item, i) => (
           <ProductViewCard
             image={item?.image}
@@ -105,9 +105,10 @@ function MenuLayout() {
             ingredients={item?.ingredients}
             price={item?.price}
             className={
-              "w-[166.5px] h-full  sm:h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
+              "w-[166.5px] h-full  sm:min-h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
             }
             btnname={"View Details"}
+            menu={true}
           />
         ))}
       </div>
