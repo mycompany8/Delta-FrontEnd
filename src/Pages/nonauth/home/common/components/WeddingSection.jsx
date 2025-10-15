@@ -1,104 +1,72 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
 
 export default function WeddingSection() {
-  const weddingProducts = [
-    {
-      id: 1,
-      name: "Wedding Cakes",
-      description: "Custom designed multi-tier cakes with your choice of flavors and decorations",
-      price: "₹299.99",
-      image: "/Images/home-first.jpg",
-    },
-    {
-      id: 2,
-      name: "Wedding Cakes",
-      description: "Custom designed multi-tier cakes with your choice of flavors and decorations",
-      price: "₹299.99",
-      image: "/Images/home-first.jpg",
-    },
-    {
-      id: 3,
-      name: "Wedding Cakes",
-      description: "Custom designed multi-tier cakes with your choice of flavors and decorations",
-      price: "₹299.99",
-      image: "/Images/home-first.jpg",
-    },
-  ];
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
-    <section className="w-full relative z-10 py-16">
-      <div className="w-full px-4 md:px-[10%]">
-        <div className="flex justify-center flex-col items-center space-y-4 mb-12">
-          <div className="w-60 h-10 bg-pink-100 flex items-center justify-center rounded-md">
-            <p className="font-roboto font-semibold text-[15.25px] leading-[17.5px] tracking-normal text-center align-middle text-pink-700">
-              Wedding Special
-            </p>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center">
-            Make Your Wedding Day <span className="text-pink-500">Extra Special</span>
+    <section className="w-full relative h-screen flex items-center">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage: "url('/Images/festivalimage.png')"
+        }}
+      ></div>
+
+      {/* White Gradient Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"></div>
+
+      {/* Content */}
+      <div className="relative z-10 w-full px-6 md:px-16">
+        <div className="max-w-2xl">
+          {/* Wedding Special Badge */}
+          <span className="flex items-center mb-6 ">
+            <span className="text-red-500 text-2xl mr-2">♥</span>
+            <span className="text-red-500 font-semibold text-lg">Wedding Special</span>
+          </span>
+
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+            Celebrate Your
+          </h1>
+          <h2 className="text-5xl md:text-6xl font-bold text-red-500 leading-tight">
+            Love Story
           </h2>
-          <p className="text-lg text-gray-600 text-center max-w-2xl">
-            From elegant wedding cakes to personalized dessert tables, we create unforgettable sweet moments for your special day
+          <h3 className="text-5xl md:text-6xl font-bold text-gray-800 leading-tight">
+            With Sweet Memories
+          </h3>
+
+
+          {/* Description */}
+          <p className="text-lg md:text-xl leading-relaxed mb-8 max-w-lg ">
+            From elegant wedding cakes to personalized dessert tables and custom favors, we create unforgettable sweet moments for your special day with love
           </p>
-        </div>
 
-        {/* Product Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {weddingProducts.map((product) => (
-            <div key={product.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative group">
-              <div className="relative p-5 rounded-xl">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-80 object-cover rounded-xl"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-                <p className="text-gray-600 mb-4 text-sm leading-relaxed">{product.description}</p>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-2xl font-bold text-pink-500">{product.price}</span>
-                  <button className="bg-pink-500 hover:bg-pink-600 text-white px-6 py-2 rounded-md font-semibold transition-colors">
-                    View Details
-                  </button>
-                </div>
-              </div>
+          {/* Contact Us Button */}
+          <button 
+            onClick={scrollToContact}
+            className="bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer"
+          >
+            Contact Us
+          </button>
+
+          {/* Offerings - Simple text layout */}
+          <div className="mt-12 flex flex-col md:flex-row gap-30">
+            <div>
+              <h4 className="text-xl font-bold text-gray-800 mb-2">Wedding Cakes</h4>
+              <p className="text-gray-600">From ₹499</p>
             </div>
-          ))}
-        </div>
-
-        {/* Wedding Orders Section */}
-        <div className="mt-16 bg-pink-400 rounded-xl p-8 md:p-12">
-          <div className="max-w-4xl">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-8 text-left">
-              Wedding Orders
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                  <FaCheckCircle className="w-6 h-6 text-white" />
-                </div>
-                <p className="text-white font-medium">Customized Wedding Cakes</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                  <FaCheckCircle className="w-6 h-6 text-white" />
-                </div>
-                <p className="text-white font-medium">Dessert Table & Pastry Platters</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                  <FaCheckCircle className="w-6 h-6 text-white" />
-                </div>
-                <p className="text-white font-medium">Tasting & Consultation</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="flex-shrink-0">
-                  <FaCheckCircle className="w-6 h-6 text-white" />
-                </div>
-                <p className="text-white font-medium">Delivery & Setup Services</p>
-              </div>
+            <div>
+              <h4 className="text-xl font-bold text-gray-800 mb-2">Dessert Tables</h4>
+              <p className="text-gray-600">From ₹799</p>
             </div>
           </div>
         </div>

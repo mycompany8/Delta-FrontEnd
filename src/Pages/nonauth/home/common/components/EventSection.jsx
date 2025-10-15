@@ -62,8 +62,7 @@ export default function DiwaliSection() {
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">{product.description}</p>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-2xl font-bold text-orange-500">{product.price}</span>
+                <div className="flex justify-end items-center mb-4">
                   <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md font-semibold transition-colors">
                     See More
                   </button>

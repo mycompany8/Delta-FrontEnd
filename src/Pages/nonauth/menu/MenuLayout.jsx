@@ -11,7 +11,6 @@ import product2 from "../../../../public/Images/product2.png";
 import product3 from "../../../../public/Images/product3.png";
 import product4 from "../../../../public/Images/product4.png";
 import product5 from "../../../../public/Images/product5.png";
-import product6 from "../../../../public/Images/product6.png";
 import Footer from "../../../common/layout/footer/Footer";
 function MenuLayout() {
   const products = [
@@ -96,7 +95,7 @@ function MenuLayout() {
 
       <MenuHeader />
       <div className="grid grid-cols-2 sm:grid-cols-3 w-full sm:w-[100vw]  place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
-        {products.map((item, i) => (
+        {products.map((item) => (
           <ProductViewCard
             image={item?.image}
             name={item?.name}
@@ -105,7 +104,7 @@ function MenuLayout() {
             ingredients={item?.ingredients}
             price={item?.price}
             className={
-              "w-[166.5px] h-full  sm:h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
+              "w-[166.5px] h-full  sm:h-[633.328125px]  min-h-[380px] sm:w-[485.328125px] "
             }
             btnname={"View Details"}
           />

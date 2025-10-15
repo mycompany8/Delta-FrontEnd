@@ -1,6 +1,5 @@
 import React from "react";
 
-import productImabe from "../../../../../public/Images/product.png";
 import Button from "../../button/Button";
 
 function ProductViewCard({
@@ -17,12 +16,12 @@ function ProductViewCard({
   return (
     <>
       <div
-        className={` ${className}   flex flex-col leading-relaxed shadow-xl rounded-lg  h-full`}
+        className={` ${className}   flex flex-col leading-relaxed shadow-xl rounded-2xl  h-full`}
       >
         
         <div className=" h-2/3  ">
           <img
-            className="h-full object-center w-full rounded-t-lg"
+            className="h-full object-center w-full rounded-t-2xl"
             src={image}
             alt=""
           />

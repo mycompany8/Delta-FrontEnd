@@ -48,7 +48,7 @@ export default function AboutSection() {
             <img 
               src="/Images/home-first.jpg" 
               alt="Freshly baked goods" 
-              className="w-full h-100 object-cover rounded-xl shadow-lg"
+              className="w-full h-150 object-cover rounded-xl shadow-lg"
             />
             
             {/* Floating Action Buttons */}

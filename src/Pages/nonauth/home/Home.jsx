@@ -158,7 +158,7 @@
 
 import React from "react";
 import Header from "../../../common/layout/header/Header";
-import DiwaliSection from "./common/Components/DiwaliSection";
+import DiwaliSection from "./common/components/EventSection";
 import AboutSection from "./common/Components/AboutSection";
 import WeddingSection from "./common/Components/WeddingSection";
 import TestimonialsSection from "./common/components/TestimonialsSection";
@@ -168,16 +168,30 @@ import HomeFooter from "./common/components/HomeFooter";
 import SignatureTreats from "./common/components/SignatureTreats";
 import GallerySection from "./common/components/GallerySection";
 import Footer from "../../../common/layout/footer/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  const goToMenu = () => {
+    navigate('/menu');
+  };
+
   return (
     <div className=" w-[100vw] ">
      
-      <div className="relative z-20">
-        <Header />
-      </div>
+      <Header />
       {/* ✅ Fixed Background */}
       <div
         className="fixed top-0 left-0 w-full h-screen bg-cover bg-center bg-fixed"
@@ -198,6 +212,15 @@ export default function Home() {
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"></div>
 
+        {/* Logo positioned in top-left corner */}
+        <div className="absolute top-6 left-6 z-40">
+          <img
+            src="/Images/DeltaImage.png"
+            className="w-24 h-14 md:w-28 md:h-20 lg:w-40 lg:h-24"
+            alt="Delta Bakery Logo"
+          />
+        </div>
+
         {/* Text positioned to match Figma design */}
         <div className="relative z-20 flex items-center h-full px-6 md:px-16">
           <div className="max-w-2xl">
@@ -211,10 +234,16 @@ export default function Home() {
               From the heart of Kozhikode, Delta Bakery brings you fresh bread, delightful sweets, and grand spreads for life's biggest celebrations. Perfect for weddings, perfect for memories.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors">
+              <button 
+                onClick={scrollToContact}
+                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors cursor-pointer"
+              >
                 Contact Us
               </button>
-              <button className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors">
+              <button 
+                onClick={goToMenu}
+                className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors cursor-pointer"
+              >
                 View Menu
               </button>
             </div>
@@ -228,7 +257,7 @@ export default function Home() {
       </div>
 
       {/* ✅ About Section */}
-      <div className="relative z-20 bg-gray-50">
+      <div id="about" className="relative z-20 bg-gray-50">
         <AboutSection />
       </div>
 
@@ -244,7 +273,7 @@ export default function Home() {
       </div>
 
       {/* ✅ Gallery Section */}
-      <div className="relative z-20 bg-white">
+      <div id="gallery" className="relative z-20 bg-white">
         <GallerySection />
       </div>
 
@@ -256,7 +285,7 @@ export default function Home() {
 
 
       {/* ✅ Contact Section */}
-      <div className="relative z-20 bg-white">
+      <div id="contact" className="relative z-20 bg-white">
         <ContactSection />
       </div>
 

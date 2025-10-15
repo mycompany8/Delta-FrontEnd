@@ -5,7 +5,7 @@ import facebook from "../../../../public/Images/facebook.png";
 function Footer() {
   return (
     <>
-      <div className="bg-neutral-secondary w-[100vw] sm:h-[345px] h-full flex flex-col min-h-[345px]  ">
+      <div className="bg-gray-900 w-[100vw] sm:h-[345px] h-full flex flex-col min-h-[345px]  ">
         <div className=" flex flex-wrap sm:flex-nowrap p-2 sm:p-10 sm:px-20 h-full text-neutral-gray2 justify-around">
           <div className="div">
             <h1 className="text-2xl font-bold text-white">Delta Bakery</h1>
@@ -16,11 +16,11 @@ function Footer() {
           <div className="div">
             <h1 className="text-lg text-white font-semibold">Quick Links</h1>
             <div>
+              <h1 className="text-sm font-normal">Home</h1>
               <h1 className="text-sm font-normal">About</h1>
-              <h1 className="text-sm font-normal">About</h1>
-              <h1 className="text-sm font-normal">About</h1>
-              <h1 className="text-sm font-normal">About</h1>
-              <h1 className="text-sm font-normal">About</h1>
+              <h1 className="text-sm font-normal">Menu</h1>
+              <h1 className="text-sm font-normal">Gallery</h1>
+              <h1 className="text-sm font-normal">Contact</h1>
             </div>
           </div>
           <div className="div">

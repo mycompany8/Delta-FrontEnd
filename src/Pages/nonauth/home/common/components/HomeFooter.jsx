@@ -15,7 +15,7 @@ export default function HomeFooter() {
               <input
                 type="tel"
                 placeholder="Your Phone Number"
-                className="flex-1 px-4 py-3 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="flex-1 px-4 py-3 rounded-md bg-white placeholder:text-gray-300 text-black"
               />
               <button className="bg-orange-500 hover:bg-orange-600 px-6 py-3 rounded-md font-medium transition-colors">
                 Subscribe

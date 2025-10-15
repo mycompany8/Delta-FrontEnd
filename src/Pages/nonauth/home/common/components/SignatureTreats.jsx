@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignatureTreats() {
+  const navigate = useNavigate();
   const signatureProducts = [
     {
       id: 1,
@@ -95,7 +96,8 @@ export default function SignatureTreats() {
 
         {/* View Full Menu Button */}
         <div className="text-center">
-          <button className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors flex items-center space-x-2 mx-auto">
+          <button className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors flex items-center space-x-2 mx-auto cursor-pointer"
+          onClick={() => navigate('/menu')}>
             <span>View Full Menu</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
