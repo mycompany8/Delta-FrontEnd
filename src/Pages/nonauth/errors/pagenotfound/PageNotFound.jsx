@@ -10,7 +10,6 @@ import gmail from "../../../../../public/Images/gmailorange.png";
 import Footer from "../../../../common/layout/footer/Footer";
 import sadcookie from "../../../../../public/Images/sadcookie.jpg";
 
-
 import productImabe from "../../../../../public/Images/product.png";
 import product1 from "../../../../../public/Images/product1.png";
 import product8 from "../../../../../public/Images/product8.png";
@@ -22,44 +21,44 @@ import product5 from "../../../../../public/Images/product5.png";
 import ProductViewCard from "../../../../common/components/cards/product/ProductViewCard";
 
 function PageNotFound() {
-      const products = [
-        {
-          image: productImabe,
-          name: "Artisan Croissants",
-          //   price: "400",
-          description:
-            "Buttery, flaky perfection baked fresh daily with premium French butter",
-          //   catogery: "Pastries",
-          //   ingredients: "Flour, Butter, Eggs...",
-        },
-        {
-          image: product8,
-          name: "Artisan Croissants",
-          //   price: "400",
-          description:
-            "Buttery, flaky perfection baked fresh daily with premium French butter",
-          //   catogery: "Pastries",
-          //   ingredients: "Flour, Butter, Eggs...",
-        },
-        {
-          image: product5,
-          name: "Artisan Croissants",
-          //   price: "400",
-          description:
-            "Buttery, flaky perfection baked fresh daily with premium French butter",
-          //   catogery: "Pastries",
-          //   ingredients: "Flour, Butter, Eggs...",
-        },
-        // {
-        //   image: product2,
-        //   name: "Artisan Croissants",
-        //   //   price: "400",
-        //   description:
-        //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-        //   //   catogery: "Pastries",
-        //   //   ingredients: "Flour, Butter, Eggs...",
-        // },
-      ];
+  const products = [
+    {
+      image: productImabe,
+      name: "Artisan Croissants",
+        price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      //   catogery: "Pastries",
+      //   ingredients: "Flour, Butter, Eggs...",
+    },
+    {
+      image: product8,
+      name: "Artisan Croissants",
+        price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      //   catogery: "Pastries",
+      //   ingredients: "Flour, Butter, Eggs...",
+    },
+    {
+      image: product5,
+      name: "Artisan Croissants",
+        price: "400",
+      description:
+        "Buttery, flaky perfection baked fresh daily with premium French butter",
+      //   catogery: "Pastries",
+      //   ingredients: "Flour, Butter, Eggs...",
+    },
+    // {
+    //   image: product2,
+    //   name: "Artisan Croissants",
+        // price: "400",
+    //   description:
+    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+    //   //   catogery: "Pastries",
+    //   //   ingredients: "Flour, Butter, Eggs...",
+    // },
+  ];
   const buttons = [
     { name: "Back to Home", onClick: () => alert("Go to home") },
     { name: "View Menu", onClick: () => alert("View menu") },
@@ -84,7 +83,7 @@ function PageNotFound() {
       <Header />
 
       <ErrorLayOut
-      img={sadcookie}
+        img={sadcookie}
         bgImage={bgimage}
         code="404"
         title="Page Not Found"
@@ -93,7 +92,29 @@ function PageNotFound() {
         icons={icons}
         support={support}
       />
-       <div className="grid grid-cols-2 w-[100vw] sm:grid-cols-3 py-5 gap-x-4 px-2 gap-y-3 sm:px-12 place-items-center ">
+
+      <div className="w-[100vw] mt-20">
+        <div className="flex flex-col sm:justify-center w-full space-y-3 p-4 sm:items-center">
+          <h1 className="text-2xl font-bold">While You're Here...</h1>
+          <p className="text-center">Check out some of our most popular treats that customers can't stop <br /> talking about</p>
+        </div>
+        <div className="grid grid-cols-2   gap-y-3 sm:grid-cols-3 py-5 gap-x-4 px-3 sm:px-12 place-items-center ">
+          {products.map((item, i) => (
+            <ProductViewCard
+              image={item?.image}
+              name={item?.name}
+              description={item?.description}
+              catogery={item?.catogery}
+              ingredients={item?.ingredients}
+              price={item?.price}
+              festivel={true}
+              btnname="View Details"
+              className={""}
+            />
+          ))}
+        </div>
+      </div>
+      {/* <div className="grid grid-cols-2 w-[100vw] sm:grid-cols-3 py-5 gap-x-4 px-2 gap-y-3 sm:px-12 place-items-center ">
             {products.map((item, i) => (
               <ProductViewCard
                 image={item?.image}
@@ -105,7 +126,7 @@ function PageNotFound() {
                 btnname={"View Detail"}
               />
             ))}
-          </div>
+          </div> */}
       <Footer />
     </>
   );

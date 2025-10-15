@@ -27,7 +27,7 @@ function ProductViewCard({
             alt=""
           />
         </div>
-        <div className=" h-full space-y-1   leading-relaxed p-2 sm:p-5">
+        <div className=" h-full space-y-2   leading-relaxed p-2 sm:p-5">
           {!festivel ? (
             <div className="flex justify-between  ">
               <h1 className="text-xl text-primary font-bold w-1/4">{name}</h1>
@@ -50,7 +50,7 @@ function ProductViewCard({
               </div>
             </div>
           )}
-          <p>{description}</p>
+          <p className="text-sm font-medium">{description}</p>
           <span className="p-1 text-sm rounded-md bg-tertiary text-primary">
             {catogery}
           </span>
