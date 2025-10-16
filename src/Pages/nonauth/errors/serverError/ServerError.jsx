@@ -10,7 +10,6 @@ import serverissue from "../../../../../public/Images/serverissue.png";
 import gmail from "../../../../../public/Images/gmailorange.png";
 import sadcookie from "../../../../../public/Images/sadcookie.jpg";
 
-
 function ServerError() {
   const buttons = [
     { name: "Refresh Page", onClick: () => alert("Refresh Page") },
@@ -36,7 +35,7 @@ function ServerError() {
       <Header />
 
       <ErrorLayOut
-      img={sadcookie}
+        img={sadcookie}
         bgImage={bgimage}
         code="500"
         title="Server Error"

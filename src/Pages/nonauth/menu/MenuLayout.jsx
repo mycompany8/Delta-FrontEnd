@@ -12,6 +12,8 @@ import product3 from "../../../../public/Images/product3.png";
 import product4 from "../../../../public/Images/product4.png";
 import product5 from "../../../../public/Images/product5.png";
 import Footer from "../../../common/layout/footer/Footer";
+import { useGetCatogery } from "../../../hooks/nonauth/catogery/useCatogery";
+import { data } from "react-router-dom";
 function MenuLayout() {
   const products = [
     {
@@ -89,6 +91,12 @@ function MenuLayout() {
       ingredients: "Flour, Butter, Eggs...",
     },
   ];
+
+
+  const {data:catogerys,isLoading:isCatogerys}=useGetCatogery()
+
+  console.log(catogerys);
+  
   return (
     <div>
       <Header />
