@@ -47,20 +47,20 @@ export default function GallerySection() {
   ];
 
   return (
-    <section className="w-full relative z-10 py-16 bg-white border-t border-gray-200">
-      <div className="w-full px-4 md:px-[10%]">
+    <section className="w-full relative z-10 py-16 px-[48px] bg-white border-t border-gray-200">
+      <div className="w-full px-4 ">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-secondary mb-4">
             Instagram Worthy Moments
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-gray1 font-light max-w-2xl mx-auto">
             Follow us @deltabakery for daily dose of baking inspiration
           </p>
         </div>
 
         {/* Image Grid - 2 rows with 4 images each */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
           {galleryImages.map((item) => (
             <div
               key={item.id}
@@ -71,7 +71,7 @@ export default function GallerySection() {
               <img
                 src={image}
                 alt={item.alt}
-                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full md:min-h-[287.4666748046875px] md:min-w-[287.4666748046875px] object-cover group-hover:scale-105 transition-transform duration-300"
               />
               {/* Instagram overlay on hover */}
               <div className="absolute inset-0 bg-black/20 bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
@@ -83,7 +83,7 @@ export default function GallerySection() {
 
         {/* Follow Us on Instagram Button */}
         <div className="text-center">
-          <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 flex items-center space-x-3 mx-auto shadow-lg hover:shadow-xl">
+          <button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-md font-semibold text-lg transition-all duration-300 flex items-center space-x-3 mx-auto shadow-lg hover:shadow-xl">
             <FaInstagram className="w-6 h-6" />
             <span>Follow Us on Instagram</span>
           </button>

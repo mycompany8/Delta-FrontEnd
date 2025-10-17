@@ -51,7 +51,7 @@ export default function Navbar() {
     <>
       {/* Desktop Navigation */}
       <div
-        className={`fixed top-0 left-0 w-full z-50 hidden md:flex justify-end items-center px-10 py-4 transition-colors duration-500 ${
+        className={`fixed top-0 left-0 w-full z-50 hidden md:flex justify-end items-center px-10 py-2 transition-colors duration-500 ${
           isScrolled ? "bg-black/80 shadow-lg" : "bg-transparent"
         }`}
       >

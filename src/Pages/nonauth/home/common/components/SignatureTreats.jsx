@@ -49,8 +49,8 @@ export default function SignatureTreats() {
   ];
 
   return (
-    <section className="w-full relative z-10 py-16 bg-white">
-      <div className="w-full px-4 md:px-[10%]">
+    <section className="w-full relative z-10 px-[48px] py-16 bg-white">
+      <div className="w-full px-4 ">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -66,25 +66,25 @@ export default function SignatureTreats() {
           {signatureProducts.map((product) => (
             <div 
               key={product.id} 
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+              className="bg-white rounded-xl max-h-[561.34375px] shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative  sm:min-h-[405.328125px] overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.name} 
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                  className="w-full  sm:min-h-[405.328125px] object-cover group-hover:scale-105 transition-transform duration-300 cursor-pointer"
                 />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">{product.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-orange-100 text-primary px-3 py-1 rounded-full text-sm font-semibold">
                     {product.category}
                   </span>
                   <Link
                     to={`/product/${product.id}`}
-                    className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md font-semibold transition-colors"
+                    className="bg-primary hover:bg-orange-600 text-white px-4 py-2 rounded-md font-semibold transition-colors"
                   >
                     See More
                   </Link>
@@ -96,7 +96,7 @@ export default function SignatureTreats() {
 
         {/* View Full Menu Button */}
         <div className="text-center">
-          <button className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors flex items-center space-x-2 mx-auto cursor-pointer"
+          <button className="bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors flex items-center space-x-2 mx-auto cursor-pointer"
           onClick={() => navigate('/menu')}>
             <span>View Full Menu</span>
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

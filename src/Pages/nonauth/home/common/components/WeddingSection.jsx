@@ -12,7 +12,7 @@ export default function WeddingSection() {
   };
 
   return (
-    <section className="w-full relative h-screen flex items-center">
+    <section className="w-full relative h-[80vh] flex items-center">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
