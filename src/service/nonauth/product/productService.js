@@ -28,9 +28,29 @@ export const addProduct = async (payload) => {
 
   return res?.data?.data;
 };
+
 export const getProduct = async (payload) => {
-  const { search_in, categoryId } = payload;
-  const res = await api.post("Products");
+  const { searchTerm, categoryId } = payload;
+  console.log(searchTerm, categoryId);
+
+  const res = await api.post("Products", {
+    ...payload,
+  });
   console.log(res.data);
+  return res?.data?.data;
+};
+
+export const getProductById = async (payload) => {
+  const { productId } = payload;
+  const res = await api.get(`Product/${productId}`);
+  console.log(res.data);
+  return res?.data?.data;
+};
+
+export const getProductByCatogery = async (payload) => {
+  const { categoryId } = payload;
+  console.log(categoryId);
+  const res = await api.get(`GetProductCat/${categoryId}`);
+  console.log(res?.data);
   return res?.data?.data;
 };

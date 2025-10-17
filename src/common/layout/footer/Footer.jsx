@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import instagram from "../../../../public/Images/Instagram.png";
 import facebook from "../../../../public/Images/facebook.png";
 
 function Footer() {
+  const [phoneNumber, setPhoneNumber] = useState("+919605204798");
+  const handleWhatsAppClick = () => {
+    const message = encodeURIComponent(
+      "Hi! I’d like to know more about your bakery products. Could you please share your menu and pricing details?"
+    );
+    const whatsappUrl = `https://wa.me/${phoneNumber.replace(
+      /[^0-9]/g,
+      ""
+    )}?text=${message}`;
+    window.open(whatsappUrl, "_blank");
+  };
+
   return (
     <>
       <div className="bg-gray-900 w-[100vw] sm:h-[345px] h-full flex flex-col min-h-[345px]  ">
@@ -40,7 +52,10 @@ function Footer() {
               14/1005, Francis Rd, Thekepuram, <br /> Kuttichira, Kozhikode,
               Kerala 673003
             </p>
-            <p> 0495 230 3727</p>
+            <p onClick={handleWhatsAppClick} className="cursor-pointer">
+              {" "}
+              0495 230 3727
+            </p>
             <p>hello@deltabakery.com</p>
           </div>
         </div>

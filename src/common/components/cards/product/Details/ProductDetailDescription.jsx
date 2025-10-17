@@ -75,8 +75,8 @@ function ProductDetailDescription({
               key={idx}
               className="h-[80px] flex flex-col justify-center hover:bg-tertiary hover:border-primary rounded border-neutral-gray3 px-5 w-full border"
             >
-              <h1 className="text-sm font-semibold">{size.label}</h1>
-              <h1 className="text-sm">{size.value}</h1>
+              <h1 className="text-sm font-semibold">{size?.variantName}</h1>
+              <h1 className="text-sm">{size.stockQuantity}</h1>
             </div>
           ))}
         </div>

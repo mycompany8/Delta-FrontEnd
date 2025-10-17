@@ -16,84 +16,100 @@ import product2 from "../../../../public/Images/product2.png";
 import product3 from "../../../../public/Images/product3.png";
 import product4 from "../../../../public/Images/product4.png";
 import product5 from "../../../../public/Images/product5.png";
+import { useGetProducts } from "../../../hooks/nonauth/product/useProduct";
+import { useGetfestivel } from "../../../hooks/nonauth/festivel/useFestivel";
+import { useNavigate } from "react-router-dom";
+
 
 function FestivelDetailLayout() {
-  const products = [
-    {
-      image: productImabe,
-      name: "Artisan Croissants",
-        price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-      //   catogery: "Pastries",
-      //   ingredients: "Flour, Butter, Eggs...",
-    },
-    {
-      image: product8,
-      name: "Artisan Croissants",
-        price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-      //   catogery: "Pastries",
-      //   ingredients: "Flour, Butter, Eggs...",
-    },
-    {
-      image: product5,
-      name: "Artisan Croissants",
-        price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-      //   catogery: "Pastries",
-      //   ingredients: "Flour, Butter, Eggs...",
-    },
+  const navigate=useNavigate()
+  // const products = [
+  //   {
+  //     image: productImabe,
+  //     name: "Artisan Croissants",
+  //       price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //     //   catogery: "Pastries",
+  //     //   ingredients: "Flour, Butter, Eggs...",
+  //   },
+  //   {
+  //     image: product8,
+  //     name: "Artisan Croissants",
+  //       price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //     //   catogery: "Pastries",
+  //     //   ingredients: "Flour, Butter, Eggs...",
+  //   },
+  //   {
+  //     image: product5,
+  //     name: "Artisan Croissants",
+  //       price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //     //   catogery: "Pastries",
+  //     //   ingredients: "Flour, Butter, Eggs...",
+  //   },
 
-    // {
-    //   image: product1,
-    //   name: "Artisan Croissants",
-    //   price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-    //   catogery: "Pastries",
-    //   ingredients: "Flour, Butter, Eggs...",
-    // },
-    {
-      image: product2,
-      name: "Artisan Croissants",
-        price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-      //   catogery: "Pastries",
-      //   ingredients: "Flour, Butter, Eggs...",
-    },
-    // {
-    //   image: product10,
-    //   name: "Artisan Croissants",
-    // //   price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-    // //   catogery: "Pastries",
-    // //   ingredients: "Flour, Butter, Eggs...",
-    // },
+  //   // {
+  //   //   image: product1,
+  //   //   name: "Artisan Croissants",
+  //   //   price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //   //   catogery: "Pastries",
+  //   //   ingredients: "Flour, Butter, Eggs...",
+  //   // },
+  //   {
+  //     image: product2,
+  //     name: "Artisan Croissants",
+  //       price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //     //   catogery: "Pastries",
+  //     //   ingredients: "Flour, Butter, Eggs...",
+  //   },
+  //   // {
+  //   //   image: product10,
+  //   //   name: "Artisan Croissants",
+  //   // //   price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //   // //   catogery: "Pastries",
+  //   // //   ingredients: "Flour, Butter, Eggs...",
+  //   // },
 
-    // {
-    //   image: product3,
-    //   name: "Artisan Croissants",
-    //   price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-    // //   catogery: "Pastries",
-    // //   ingredients: "Flour, Butter, Eggs...",
-    // },
-    // {
-    //   image: product4,
-    //   name: "Artisan Croissants",
-    //   price: "400",
-    //   description:
-    //     "Buttery, flaky perfection baked fresh daily with premium French butter",
-    //   catogery: "Pastries",
-    //   ingredients: "Flour, Butter, Eggs...",
-    // },
-  ];
+  //   // {
+  //   //   image: product3,
+  //   //   name: "Artisan Croissants",
+  //   //   price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //   // //   catogery: "Pastries",
+  //   // //   ingredients: "Flour, Butter, Eggs...",
+  //   // },
+  //   // {
+  //   //   image: product4,
+  //   //   name: "Artisan Croissants",
+  //   //   price: "400",
+  //   //   description:
+  //   //     "Buttery, flaky perfection baked fresh daily with premium French butter",
+  //   //   catogery: "Pastries",
+  //   //   ingredients: "Flour, Butter, Eggs...",
+  //   // },
+  // ];
+
+    //productget
+    const { data: products, isLoading: isProducts } = useGetProducts({
+      categoryId: 0,
+      searchTerm: "",
+    });
+//
+   const { data: festivel, isLoading: isFestivel } = useGetfestivel();
+    console.log(festivel,"festivel");
+    
+  
   return (
     <>
       <div className="h-full sm:h-[95vh] w-[100vw] ">
@@ -232,9 +248,9 @@ function FestivelDetailLayout() {
             {/* <p>Discover more delicious treats from our bakery</p> */}
           </div>
           <div className="grid grid-cols-2 gap-y-3 sm:grid-cols-4 py-5 gap-x-4 px-3 sm:px-12 place-items-center ">
-            {products.map((item, i) => (
+            {products?.map((item, i) => (
               <ProductViewCard
-                image={item?.image}
+                image={item?.productImages?.[0]?.imageUrl}
                 name={item?.name}
                 description={item?.description}
                 catogery={item?.catogery}
@@ -243,6 +259,8 @@ function FestivelDetailLayout() {
                 festivel={true}
                 btnname="View Details"
                 className={''}
+                onclick={()=>navigate(`/product-detail/${item?.id}`)}
+                imgStyle={'h-[278px] '}
               />
             ))}
           </div>

@@ -15,7 +15,7 @@ function Routeree() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/menu" element={<MenuLayout />}></Route>
-        <Route path="/product-detail" element={<ProductDetail />}></Route>
+        <Route path="/product-detail/:id" element={<ProductDetail />}></Route>
         <Route path="/festivel-detail" element={<FestivelDetailLayout />}></Route>
         <Route path="/contact" element={<ContactLayOut />}></Route>
         <Route path="/about" element={<AboutLayOut />}></Route>

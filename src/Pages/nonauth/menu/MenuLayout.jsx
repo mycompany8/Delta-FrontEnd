@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Header from "../../../common/layout/header/Header";
 import MenuHeader from "./common/components/MenuHeader";
 import ProductViewCard from "../../../common/components/cards/product/ProductViewCard";
@@ -12,112 +12,84 @@ import product3 from "../../../../public/Images/product3.png";
 import product4 from "../../../../public/Images/product4.png";
 import product5 from "../../../../public/Images/product5.png";
 import Footer from "../../../common/layout/footer/Footer";
-import { useGetCatogery } from "../../../hooks/nonauth/catogery/useCatogery";
-import { data } from "react-router-dom";
+import {
+  useGetProducts,
+  useGetProductsByCatogery,
+} from "../../../hooks/nonauth/product/useProduct";
+import useForm from "../../../hooks/common/form/useForm";
+import useDebonce from "../../../hooks/common/debounse/debonce";
+import { useNavigate } from "react-router-dom";
+
 function MenuLayout() {
-  const products = [
-    {
-      image: productImabe,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
-    {
-      image: product8,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
-    {
-      image: product5,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
+  const [search, setSearch] = useState("");
+  const [catogery, setCatogery] = useState("");
+  const navigate=useNavigate()
 
-    {
-      image: product1,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
-    {
-      image: product2,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
-    {
-      image: product10,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
+  const debouncedSearch = useDebonce(setSearch);
+  //formik
+  const initialValues = {
+    searchTerm: "",
+  };
+  const formik = useForm(initialValues, () => {});
+  //productget
+  const { data: products, isLoading: isProducts } = useGetProducts({
+    categoryId: 0,
+    searchTerm: search,
+  });
+  const { data: productsByCat, isLoading: isProductsByCat } =
+    useGetProductsByCatogery({
+      categoryId: catogery,
+    });
 
-    {
-      image: product3,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
-    {
-      image: product4,
-      name: "Artisan Croissants",
-      price: "400",
-      description:
-        "Buttery, flaky perfection baked fresh daily with premium French butter",
-      catogery: "Pastries",
-      ingredients: "Flour, Butter, Eggs...",
-    },
-  ];
+  //search
+  useEffect(() => {
+    debouncedSearch(formik.values.searchTerm);
+  }, [formik.values.searchTerm]);
+  console.log(products, "products");
+  console.log(productsByCat, "productsByCat");
 
+ const productse = catogery
+  ? productsByCat?.length>0?products: []
+  : products ?? [];
+  // if () {
+  //   productse =  || [];
+  // } else if (products?.length>0) {
+  //   productse = products || [];
+  // }
 
-  const {data:catogerys,isLoading:isCatogerys}=useGetCatogery()
+  // const productse=?productsByCat :products
 
-  console.log(catogerys);
-  
   return (
     <div>
       <Header />
-
-      <MenuHeader />
+      <MenuHeader
+        formik={formik}
+        setSearch={setSearch}
+        setCatogery={setCatogery}
+      />
       <div className="grid grid-cols-2 sm:grid-cols-3 w-full sm:w-[100vw]  place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
-        {products.map((item) => (
-          <ProductViewCard
-            image={item?.image}
-            name={item?.name}
-            description={item?.description}
-            catogery={item?.catogery}
-            ingredients={item?.ingredients}
-            price={item?.price}
-            className={
-              "w-[166.5px] h-full  sm:min-h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
-            }
-            btnname={"View Details"}
-            menu={true}
-          />
-        ))}
+        {productse?.length > 0 ? (
+          productse?.map((item,i) => (
+            <ProductViewCard
+            key={i+1}
+              image={item?.productImages?.[0]?.imageUrl}
+              name={item?.name}
+              description={item?.description}
+              catogery={item?.catogery}
+              ingredients={item?.ingredients}
+              price={item?.price}
+              className={
+                "w-[166.5px] h-full  sm:min-h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
+              }
+              btnname={"View Details"}
+              menu={true}
+              onclick={()=>navigate(`/product-detail/${item?.id}`)}
+              imgStyle={'sm:min-h-[403.328125px] '}
+            />
+          ))
+        ) : (
+          <h1>data not found</h1>
+        )}
       </div>
       <Footer />
     </div>
