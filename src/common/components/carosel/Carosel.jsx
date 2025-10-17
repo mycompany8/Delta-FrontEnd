@@ -17,6 +17,11 @@ const Carousel = ({
   const next = () => {
     setCurrent((current) => (current === items.length - 1 ? 0 : current + 1));
   };
+  const images = items.map((item) =>
+    typeof item === "string" ? item : item?.imageUrl
+  );
+  console.log(images,"images");
+  
 
   useEffect(() => {
     if (!autoSlide) return;
@@ -45,7 +50,7 @@ const Carousel = ({
         <AnimatePresence mode="wait">
           <motion.img
             key={current}
-            src={items[current]}
+            src={images}
             alt={`slide-${current}`}
             className="w-full h-full object-cover rounded-2xl shadow"
             initial={{ opacity: 0, x: 50 }}

@@ -14,7 +14,13 @@ import product2 from "../../../../public/Images/product2.png";
 import product3 from "../../../../public/Images/product3.png";
 import product4 from "../../../../public/Images/product4.png";
 import product5 from "../../../../public/Images/product5.png";
+import { useParams } from "react-router-dom";
+import {
+  useGetProducts,
+  useGetProductsById,
+} from "../../../hooks/nonauth/product/useProduct";
 function ProductDetail() {
+  const { id } = useParams();
   const products = [
     {
       image: productImabe,
@@ -53,11 +59,20 @@ function ProductDetail() {
       //   ingredients: "Flour, Butter, Eggs...",
     },
   ];
+
+  //productget
+  const { data: productsById, isLoading: isProductsById } = useGetProductsById({
+    productId: id,
+  });
+  console.log(productsById,"eer");
+
+  const product = productsById?.[0];
+
   return (
     <>
       <div className="h-full sm:h-screen ">
         <DetailPageHeader />
-        <ProductDetailsView />
+        <ProductDetailsView productsById={productsById} />
       </div>
       <div className="h-full">
         <ProductDescription />

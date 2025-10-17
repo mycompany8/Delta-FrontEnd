@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Button from "../../components/button/Button";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,15 +18,15 @@ export default function Navbar() {
 
   const scrollToSection = (sectionId) => {
     // If we're not on the home page, navigate to home first
-    if (location.pathname !== '/') {
-      navigate('/');
+    if (location.pathname !== "/") {
+      navigate("/");
       // Wait for navigation to complete, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
           });
         }
       }, 100);
@@ -33,9 +34,9 @@ export default function Navbar() {
       // We're already on home page, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
         });
       }
     }
@@ -56,43 +57,50 @@ export default function Navbar() {
       >
         <ul className="flex space-x-5">
           <li>
-            <Link to="/" className="text-white font-roboto font-medium text-base leading-6 hover:text-orange-400 transition-colors">
-              Home
+            <Link
+              to="/"
+              className="text-white font-roboto font-medium text-base leading-6 hover:text-orange-400 transition-colors"
+            >
+               <Button name={'Home'}/>
             </Link>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="text-white font-roboto font-medium text-base leading-6 hover:text-orange-400 transition-colors cursor-pointer"
-            >
-              About
-            </button>
+            <Button
+              onClick={() => scrollToSection("about")}
+              className="text-white font-roboto font-medium text-base  hover:text-orange-400 transition-colors cursor-pointer"
+              name={"About"}
+            />
           </li>
           <li>
-            <Link to="/menu" className="text-white font-roboto font-medium text-base leading-6 hover:text-orange-400 transition-colors">
-              Menu
+            <Link
+              to="/menu"
+              className="text-white font-roboto font-medium text-base  hover:text-orange-400 transition-colors"
+            >
+              <Button name={'Menu'}/>
             </Link>
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('gallery')}
+            <Button
+              onClick={() => scrollToSection("gallery")}
               className="text-white font-roboto font-medium text-base leading-6 hover:text-orange-400 transition-colors cursor-pointer"
-            >
-              Gallery
-            </button>
+              name={"Gallery"}
+            />
           </li>
           <li>
-            <button 
-              onClick={() => scrollToSection('contact')}
+            <Button
+              onClick={() => scrollToSection("contact")}
               className="text-white font-roboto font-medium text-base leading-6 hover:text-orange-400 transition-colors cursor-pointer"
-            >
-              Contact
-            </button>
+              name={"Contact"}
+            />
           </li>
         </ul>
         <ul className="flex space-x-2">
-          <li><img src="/Images/facebook.png" alt="Facebook" /></li>
-          <li><img src="/Images/Instagram.png" alt="Instagram" /></li>
+          <li>
+            <img src="/Images/facebook.png" alt="Facebook" />
+          </li>
+          <li>
+            <img src="/Images/Instagram.png" alt="Instagram" />
+          </li>
         </ul>
       </div>
 

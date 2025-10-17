@@ -12,16 +12,18 @@ function ProductViewCard({
   className,
   festivel,
   btnname,
-  menu
+  menu,
+  onclick,
+  imgStyle
 }) {
   return (
     <>
       <div
         className={` ${className}   flex flex-col leading-relaxed shadow-xl rounded-xl  h-full`}
       >
-        <div className=" h-2/3  ">
+        <div className={`${imgStyle} ` }onClick={onclick}>
           <img
-            className="h-full object-center w-full rounded-t-2xl"
+            className="h-full sm:max-h-[403.328125px] object-center w-full rounded-t-2xl"
             src={image}
             alt=""
           />
@@ -63,7 +65,10 @@ function ProductViewCard({
             {ingredients}
           </p>
           {!festivel && !menu && (
-            <Button className={"bg-primary w-full  text-white"} name={btnname} />
+            <Button
+              className={"bg-primary w-full  text-white"}
+              name={btnname}
+            />
           )}
         </div>
       </div>
