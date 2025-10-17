@@ -52,11 +52,11 @@ export default function DiwaliSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 place-items-center ">
           {diwaliProducts.map((product) => (
             <div key={product.id} className="bg-white max-w-[405.328125px] max-h-[569.328125px]  rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 relative group">
-              <div className="relative   p-6 rounded-xl">
+              <div className="relative   p-7 rounded-xl">
                 <img 
                   src={product.image} 
                   alt={product.name} 
-                  className="w-full h-80 object-cover rounded-xl"
+                  className="w-full sm:min-h-[357.328125px] object-cover rounded-xl"
                 />
               </div>
               <div className="p-6">
