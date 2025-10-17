@@ -210,35 +210,36 @@ export default function Home() {
         />
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent"></div>
 
         {/* Logo positioned in top-left corner */}
-        <div className="absolute top-6 left-6 z-40">
+        <div className="absolute top-20 left-10 z-40">
           <img
             src="/Images/DeltaImage.png"
-            className="w-24 h-14 md:w-28 md:h-20 lg:w-40 lg:h-24"
+            className="w-24 h-14 md:w-28 md:h-20 lg:w-[184px] lg:h-[112px]"
             alt="Delta Bakery Logo"
           />
         </div>
 
         {/* Text positioned to match Figma design */}
-        <div className="relative z-20 flex items-center h-full px-6 md:px-16">
+        <div className="relative z-20 flex items-center h-[95vh] px-6 md:px-[48px]">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-black leading-tight">
+            <h1 className="text-4xl md:text-7xl w-full font-extrabold text-black ">
               Baking Kozhikode's
             </h1>
-            <h2 className="text-4xl md:text-6xl font-bold text-orange-500 mt-2 leading-tight">
+            <h2 className="text-4xl md:text-7xl font-bold text-primary ">
               Sweetest Memories
             </h2>
-            <p className="font-roboto font-normal text-base md:text-lg leading-relaxed text-gray-700 mt-6 max-w-lg">
-              From the heart of Kozhikode, Delta Bakery brings you fresh bread, delightful sweets, and grand spreads for life's biggest celebrations. Perfect for weddings, perfect for memories.
+            <p className="font-roboto text-neutral-gray1 font-normal text-base md:text-xl leading-relaxed  mt-6 max-w-xl">
+              "From the heart of Kozhikode, Delta Bakery brings you fresh bread, delightful sweets, and grand spreads for life's biggest celebrations. Perfect for weddings, perfect for memories.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={scrollToContact}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors cursor-pointer"
+                className="bg-primary hover:bg-blend-overlay hover  bg-t text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors cursor-pointer"
               >
                 Contact Us
+                
               </button>
               <button 
                 onClick={goToMenu}
@@ -252,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* ✅ Diwali Special Collection */}
-      <div className="relative z-20 bg-yellow-50">
+      <div className="relative z-20 bg-gradient-to-r from-[#FFFBEB] to-[#FFF7ED]">
         <DiwaliSection />
       </div>
 

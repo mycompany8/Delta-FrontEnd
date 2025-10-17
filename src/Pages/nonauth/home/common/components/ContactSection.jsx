@@ -3,8 +3,8 @@ import React from "react";
 
 export default function ContactSection() {
   return (
-    <section className="w-full relative z-10 py-16 bg-gray-50">
-      <div className="w-full px-4 md:px-[10%]">
+    <section className="w-full relative z-10 md:p-[48px] py-16 bg-gray-50">
+      <div className="w-full px-4 ">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
@@ -16,15 +16,13 @@ export default function ContactSection() {
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center ">
           {/* Left Column - Get in Touch Form */}
-          <div className="bg-white rounded-xl shadow-lg p-8">
+          <div className="bg-white rounded-xl shadow-lg sm:min-h-[484px] sm:min-w-[616px] p-7">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
-            <form className="space-y-6">
+            <form className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Your Name
-                </label>
+               
                 <input
                   type="text"
                   id="name"
@@ -34,9 +32,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
-                </label>
+               
                 <input
                   type="tel"
                   id="phone"
@@ -46,9 +42,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Your Message
-                </label>
+              
                 <textarea
                   id="message"
                   name="message"
@@ -68,7 +62,7 @@ export default function ContactSection() {
 
           {/* Right Column - Visit Our Store */}
           <div className="p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Store</h3>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Visit Our Store</h3>
             
             {/* Contact Information */}
             <div className="space-y-4 mb-8">
@@ -90,7 +84,7 @@ export default function ContactSection() {
 
             {/* Opening Hours */}
             <div>
-              <h4 className="text-lg font-bold text-gray-900 mb-4">Opening Hours</h4>
+              <h4 className="text-2xl font-semibold text-gray-900 mb-4">Opening Hours</h4>
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span className="text-gray-700">Monday - Friday</span>
