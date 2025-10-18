@@ -1,5 +1,7 @@
 import React from "react";
 import { FaHeart } from "react-icons/fa";
+import loveicon from "../../../../../../public/Images/loveicon.png"
+
 
 export default function AboutSection() {
   const stats = [
@@ -54,7 +56,8 @@ export default function AboutSection() {
             {/* Floating Action Buttons */}
             <div className="relative top-7">
               <div className="absolute bottom-2 right-3 flex flex-col space-y-3 max-h-[108px] justify-center px-4  max-w-[146.71875px] bg-primary p-2 rounded-lg">
-              <h1>❤️</h1>
+              {/* <h1>❤️</h1> */}
+              <img src={loveicon} className="w-6 h-8"></img>
               <div className="text-white rounded-lg transition-colors text-lg font-medium">
                 Made with 
               </div>
