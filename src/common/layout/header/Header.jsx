@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../../components/button/Button";
 
-export default function Navbar() {
+export default function Navbar({className}) {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -52,7 +52,7 @@ export default function Navbar() {
       {/* Desktop Navigation */}
       <div
         className={`fixed top-0 left-0 w-full z-50 hidden md:flex justify-end items-center px-10 py-2 transition-colors duration-500 ${
-          isScrolled ? "bg-black/80 shadow-lg" : "bg-transparent"
+          isScrolled ? "bg-neutral-secondary shadow-lg" : `${className}`
         }`}
       >
         <ul className="flex space-x-5">
