@@ -222,7 +222,7 @@ export default function Home() {
         </div>
 
         {/* Text positioned to match Figma design */}
-        <div className="relative z-20 flex items-center h-[95vh] px-6 md:px-[48px]">
+        <div className="relative z-20 flex items-center h-[90%] px-6 md:px-[48px]">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-7xl w-full font-extrabold text-black ">
               Baking Kozhikode's

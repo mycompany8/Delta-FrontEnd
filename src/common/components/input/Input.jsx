@@ -1,7 +1,7 @@
 import React from "react";
 
 function Input({ className, placeholder,handleChange,handleBlur,values,name }) {
-  const basicStyle = "border border-neutral-gray3 rounded-sm p-1";
+  const basicStyle = "border border-neutral-gray3  rounded-sm ";
 
   return (
     <input

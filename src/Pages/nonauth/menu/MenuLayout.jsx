@@ -61,13 +61,15 @@ function MenuLayout() {
 
   return (
     <div>
-      <Header />
+    <div>
+        <Header className={'bg-neutral-secondary'} />
+    </div>
       <MenuHeader
         formik={formik}
         setSearch={setSearch}
         setCatogery={setCatogery}
       />
-      <div className="grid grid-cols-2 sm:grid-cols-3 w-full sm:w-[100vw]  place-items-center bg-background-primary gap-y-5 p-4 sm:p-5 ">
+      <div className="grid grid-cols-2 gap-x-0 sm:px-[48px] sm:grid-cols-3 w-full sm:w-[100vw] place-items-center    bg-background-primary gap-y-5 py-5  ">
         {productse?.length > 0 ? (
           productse?.map((item,i) => (
             <ProductViewCard
@@ -79,12 +81,12 @@ function MenuLayout() {
               ingredients={item?.ingredients}
               price={item?.price}
               className={
-                "w-[166.5px] h-full  sm:min-h-[633.328125px]  min-h-[380px] sm:w-[405.328125px] "
+                "sm:max-w-[405.328125px]   sm:min-h-[633.328125px]"
               }
               btnname={"View Details"}
               menu={true}
               onclick={()=>navigate(`/product-detail/${item?.id}`)}
-              imgStyle={'sm:min-h-[403.328125px] '}
+              imgStyle={'sm:w-[403.328125px] sm:min-h-[403.328125px]'}
             />
           ))
         ) : (

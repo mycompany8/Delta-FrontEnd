@@ -7,23 +7,23 @@ function ProductViewCard({
   name,
   description,
   ingredients,
-  catogery,
-  price,
+  catogery = "pastries",
+  price=50,
   className,
   festivel,
   btnname,
   menu,
   onclick,
-  imgStyle
+  imgStyle,
 }) {
   return (
     <>
       <div
-        className={` ${className}   flex flex-col leading-relaxed shadow-xl rounded-xl  h-full`}
+        className={` ${className}   flex flex-col leading-relaxed bg-white    shadow-xl rounded-xl  h-full`}
       >
-        <div className={`${imgStyle} ` }onClick={onclick}>
+        <div className={`${imgStyle} `} onClick={onclick}>
           <img
-            className="h-full sm:max-h-[403.328125px] object-center w-full rounded-t-2xl"
+            className="h-full sm:max-h-[403.328125px] object-cover w-full rounded-t-2xl"
             src={image}
             alt=""
           />
@@ -31,12 +31,16 @@ function ProductViewCard({
         <div className=" h-full space-y-2   leading-relaxed p-2 sm:p-5">
           {!festivel ? (
             <div className="flex justify-between  ">
-              <h1 className="text-xl text-primary font-bold w-1/4">{name}</h1>
+              <h1 className="text-xl text-neutral-secondary  font-semibold w-full">
+                {name}
+              </h1>
               <h1 className="text-xl text-primary font-semibold">{price}</h1>
             </div>
           ) : (
             <div className="space-y-4">
-              <h1 className="text-xl text-primary font-bold w-1/4">{name}</h1>
+              <h1 className="text-xl text-neutral-secondary  font-semibold w-full">
+                {name}
+              </h1>
 
               <div className="flex justify-between items-center ">
                 <h1 className="text-base text-primary font-semibold">
@@ -51,17 +55,17 @@ function ProductViewCard({
               </div>
             </div>
           )}
-          <p className="text-sm font-medium">{description}</p>
-          <span className="p-1 text-sm rounded-md bg-tertiary text-primary">
-            {catogery}
-          </span>
+          <p className="text-sm font-light">{description}</p>
+          <h1 className="">
+           <span className="px-2 text-xs   py-1  rounded-md bg-tertiary text-secondary"> {catogery}</span>
+          </h1>
           {ingredients && (
-            <h1 className="text-sm font-normal text-neutral-gray1">
+            <h1 className="text-xs font-normal text-neutral-gray1">
               Ingredients:
             </h1>
           )}
 
-          <p className="text-neutral-gray1 text-sm font-normal">
+          <p className="text-neutral-gray1 text-xs font-normal">
             {ingredients}
           </p>
           {!festivel && !menu && (
