@@ -192,9 +192,9 @@ export default function Home() {
     <div className=" w-[100vw] ">
      
       <Header />
-      {/* ✅ Fixed Background */}
+      {/* ✅ Desktop Background - Hidden on mobile to prevent breaking */}
       <div
-        className="fixed top-0 left-0 w-full h-screen bg-cover bg-center bg-fixed"
+        className="hidden md:block fixed top-0 left-0 w-full h-screen bg-cover bg-center bg-fixed"
         style={{
           backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.9), transparent), url('/Images/home-first.jpg')"
         }}
@@ -206,44 +206,43 @@ export default function Home() {
         <img
           src="/Images/home-first.jpg"
           alt="Bakery"
-          className="block md:hidden absolute top-0 left-0 w-full h-full object-cover"
+          className="block md:hidden absolute top-0 left-0 w-full h-full object-cover object-center"
         />
 
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/30 to-transparent"></div>
+        {/* Gradient Overlay - Stronger on mobile for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/50 to-transparent md:from-white/30 md:to-transparent"></div>
 
         {/* Logo positioned in top-left corner */}
-        <div className="absolute top-20 left-10 z-40">
+        <div className="absolute top-4 sm:top-6 md:top-20 left-4 sm:left-6 md:left-10 z-40">
           <img
             src="/Images/DeltaImage.png"
-            className="w-24 h-14 md:w-28 md:h-20 lg:w-[184px] lg:h-[112px]"
+            className="w-20 h-12 sm:w-24 sm:h-14 md:w-28 md:h-20 lg:w-[184px] lg:h-[112px]"
             alt="Delta Bakery Logo"
           />
         </div>
 
         {/* Text positioned to match Figma design */}
-        <div className="relative z-20 flex items-center h-[90%] px-6 md:px-[48px]">
+        <div className="relative z-20 flex items-center h-[90%] px-4 sm:px-6 md:px-[48px]">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-7xl w-full font-extrabold text-black ">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl w-full font-extrabold text-black leading-tight">
               Baking Kozhikode's
             </h1>
-            <h2 className="text-4xl md:text-7xl font-bold text-primary ">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-primary leading-tight">
               Sweetest Memories
             </h2>
-            <p className="font-roboto text-neutral-gray1 font-normal text-base md:text-xl leading-relaxed  mt-6 max-w-xl">
-              "From the heart of Kozhikode, Delta Bakery brings you fresh bread, delightful sweets, and grand spreads for life's biggest celebrations. Perfect for weddings, perfect for memories.
+            <p className="font-roboto text-neutral-gray1 font-normal text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mt-4 sm:mt-6 max-w-xl">
+              From the heart of Kozhikode, Delta Bakery brings you fresh bread, delightful sweets, and grand spreads for life's biggest celebrations. Perfect for weddings, perfect for memories.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button 
                 onClick={scrollToContact}
-                className="bg-primary hover:bg-blend-overlay hover  bg-t text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors cursor-pointer"
+                className="bg-primary hover:bg-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold text-sm sm:text-base md:text-lg transition-colors cursor-pointer"
               >
                 Contact Us
-                
               </button>
               <button 
                 onClick={goToMenu}
-                className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-8 py-4 rounded-md font-semibold text-lg transition-colors cursor-pointer"
+                className="bg-transparent border-2 border-black text-black hover:bg-black hover:text-white px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold text-sm sm:text-base md:text-lg transition-colors cursor-pointer"
               >
                 View Menu
               </button>

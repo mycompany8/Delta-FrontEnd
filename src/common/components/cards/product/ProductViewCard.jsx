@@ -28,22 +28,22 @@ function ProductViewCard({
             alt=""
           />
         </div>
-        <div className=" h-full space-y-2   leading-relaxed p-2 sm:p-5">
+        <div className="h-full space-y-2 leading-relaxed p-3 sm:p-4 md:p-5">
           {!festivel ? (
-            <div className="flex justify-between  ">
-              <h1 className="text-xl text-neutral-secondary  font-semibold w-full">
+            <div className="flex justify-between items-start">
+              <h1 className="text-lg sm:text-xl text-neutral-secondary font-semibold w-full pr-2">
                 {name}
               </h1>
-              <h1 className="text-xl text-primary font-semibold">{price}</h1>
+              <h1 className="text-lg sm:text-xl text-primary font-semibold whitespace-nowrap">{price}</h1>
             </div>
           ) : (
-            <div className="space-y-4">
-              <h1 className="text-xl text-neutral-secondary  font-semibold w-full">
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="text-lg sm:text-xl text-neutral-secondary font-semibold w-full">
                 {name}
               </h1>
 
-              <div className="flex justify-between items-center ">
-                <h1 className="text-base text-primary font-semibold">
+              <div className="flex justify-between items-center">
+                <h1 className="text-base sm:text-lg text-primary font-semibold">
                   {price}
                 </h1>
                 {festivel && (
@@ -55,22 +55,23 @@ function ProductViewCard({
               </div>
             </div>
           )}
-          <p className="text-sm font-light">{description}</p>
-          <h1 className="">
-           <span className="px-2 text-xs   py-1  rounded-md bg-tertiary text-secondary"> {catogery}</span>
-          </h1>
+          <p className="text-xs sm:text-sm font-light leading-relaxed">{description}</p>
+          <div className="">
+           <span className="px-2 py-1 text-xs sm:text-sm rounded-md bg-tertiary text-secondary"> {catogery}</span>
+          </div>
           {ingredients && (
-            <h1 className="text-xs font-normal text-neutral-gray1">
-              Ingredients:
-            </h1>
+            <div>
+              <h2 className="text-xs sm:text-sm font-normal text-neutral-gray1 mb-1">
+                Ingredients:
+              </h2>
+              <p className="text-neutral-gray1 text-xs sm:text-sm font-normal leading-relaxed">
+                {ingredients}
+              </p>
+            </div>
           )}
-
-          <p className="text-neutral-gray1 text-xs font-normal">
-            {ingredients}
-          </p>
           {!festivel && !menu && (
             <Button
-              className={"bg-primary w-full  text-white"}
+              className={"bg-primary w-full text-white text-sm sm:text-base py-2 sm:py-3"}
               name={btnname}
             />
           )}

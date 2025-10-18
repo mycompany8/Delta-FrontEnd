@@ -1,16 +1,7 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../../common/layout/header/Header";
 import MenuHeader from "./common/components/MenuHeader";
 import ProductViewCard from "../../../common/components/cards/product/ProductViewCard";
-
-import productImabe from "../../../../public/Images/product.png";
-import product1 from "../../../../public/Images/product1.png";
-import product8 from "../../../../public/Images/product8.png";
-import product10 from "../../../../public/Images/product10.png";
-import product2 from "../../../../public/Images/product2.png";
-import product3 from "../../../../public/Images/product3.png";
-import product4 from "../../../../public/Images/product4.png";
-import product5 from "../../../../public/Images/product5.png";
 import Footer from "../../../common/layout/footer/Footer";
 import {
   useGetProducts,
@@ -32,19 +23,18 @@ function MenuLayout() {
   };
   const formik = useForm(initialValues, () => {});
   //productget
-  const { data: products, isLoading: isProducts } = useGetProducts({
+  const { data: products } = useGetProducts({
     categoryId: 0,
     searchTerm: search,
   });
-  const { data: productsByCat, isLoading: isProductsByCat } =
-    useGetProductsByCatogery({
-      categoryId: catogery,
-    });
+  const { data: productsByCat } = useGetProductsByCatogery({
+    categoryId: catogery,
+  });
 
   //search
   useEffect(() => {
     debouncedSearch(formik.values.searchTerm);
-  }, [formik.values.searchTerm]);
+  }, [formik.values.searchTerm, debouncedSearch]);
   console.log(products, "products");
   console.log(productsByCat, "productsByCat");
 
@@ -60,16 +50,14 @@ function MenuLayout() {
   // const productse=?productsByCat :products
 
   return (
-    <div>
-    <div>
-        <Header className={'bg-neutral-secondary'} />
-    </div>
+    <div className="min-h-screen bg-background-primary">
+      <Header className={'bg-neutral-secondary'} />
       <MenuHeader
         formik={formik}
         setSearch={setSearch}
         setCatogery={setCatogery}
       />
-      <div className="grid grid-cols-2 gap-x-0 sm:px-[48px] sm:grid-cols-3 w-full sm:w-[100vw] place-items-center    bg-background-primary gap-y-5 py-5  ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 sm:gap-6 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 w-[100vw] bg-background-primary py-6 sm:py-8">
         {productse?.length > 0 ? (
           productse?.map((item,i) => (
             <ProductViewCard
@@ -81,16 +69,21 @@ function MenuLayout() {
               ingredients={item?.ingredients}
               price={item?.price}
               className={
-                "sm:max-w-[405.328125px]   sm:min-h-[633.328125px]"
+                "w-full max-w-sm mx-auto sm:max-w-none"
               }
               btnname={"View Details"}
               menu={true}
               onclick={()=>navigate(`/product-detail/${item?.id}`)}
-              imgStyle={'sm:w-[403.328125px] sm:min-h-[403.328125px]'}
+              imgStyle={'w-full h-48 sm:h-56 md:h-64 lg:h-72'}
             />
           ))
         ) : (
-          <h1>data not found</h1>
+          <div className="col-span-full flex flex-col items-center justify-center py-12 sm:py-16">
+            <div className="text-center">
+              <h1 className="text-xl sm:text-2xl font-semibold text-gray-600 mb-2">No products found</h1>
+              <p className="text-sm sm:text-base text-gray-500">Try adjusting your search or filter criteria</p>
+            </div>
+          </div>
         )}
       </div>
       <Footer />
