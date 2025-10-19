@@ -4,22 +4,22 @@ import React from "react";
 export default function ContactSection() {
   return (
     <section className="w-full relative z-10 md:p-[48px] py-16 bg-gray-50">
-      <div className="w-full px-4 ">
+      <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+        <div className="text-center mb-12 sm:mb-14 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-3 sm:mb-4">
             Visit Us Today
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
             Come experience the magic of fresh-baked goodness
           </p>
         </div>
 
         {/* Two Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 place-items-center">
           {/* Left Column - Get in Touch Form */}
-          <div className="bg-white rounded-xl shadow-lg sm:min-h-[484px] sm:min-w-[616px] p-7">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+          <div className="bg-white rounded-xl shadow-lg w-full max-w-[616px] min-h-[484px] p-4 sm:p-5 md:p-6 lg:p-7">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-5 md:mb-6">Get in Touch</h3>
             <form className="space-y-5">
               <div>
                
@@ -61,8 +61,8 @@ export default function ContactSection() {
           </div>
 
           {/* Right Column - Visit Our Store */}
-          <div className="p-8">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">Visit Our Store</h3>
+          <div className="w-full max-w-[616px] p-4 sm:p-5 md:p-6 lg:p-8">
+            <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-5 md:mb-6">Visit Our Store</h3>
             
             {/* Contact Information */}
             <div className="space-y-4 mb-8">
