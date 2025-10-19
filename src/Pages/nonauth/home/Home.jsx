@@ -171,6 +171,7 @@ import Footer from "../../../common/layout/footer/Footer";
 import { Link, useNavigate } from "react-router-dom";
 
 
+
 export default function Home() {
   const navigate = useNavigate();
 
@@ -222,7 +223,7 @@ export default function Home() {
         </div>
 
         {/* Text positioned to match Figma design */}
-        <div className="relative z-20 flex items-center h-[90%] px-4 sm:px-6 md:px-[48px]">
+<div className="relative z-20 flex items-center h-[90%] px-6 md:px-[48px] pt-32 md:pt-40">
           <div className="max-w-2xl">
             <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl w-full font-extrabold text-black leading-tight">
               Baking Kozhikode's
